@@ -4,3 +4,6 @@ Repository to host general Wiki, any material required for this and any addition
 
 
 [asdad](https://burohappoldengineering.github.io/documentation-page/UntitledDiagram.drawio.svg)
+
+
+![Self-editing Diagram](http://jgraph.github.io/drawio-github/self-editing.svg)

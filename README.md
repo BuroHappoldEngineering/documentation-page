@@ -3,4 +3,4 @@ Repository to host general Wiki, any material required for this and any addition
 
 
 
-![asdad](https://burohappoldengineering.github.io/documentation-page/Untitled Diagram.drawio.svg)
+[asdad](https://burohappoldengineering.github.io/documentation-page/Untitled Diagram.drawio.svg)

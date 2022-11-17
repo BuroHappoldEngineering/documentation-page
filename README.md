@@ -7,5 +7,3 @@ Repository to host general Wiki, any material required for this and any addition
 
 
 ![flowcharttest](https://burohappoldengineering.github.io/documentation-page/flowcharttest.drawio)
-
-https://github.com/BuroHappoldEngineering/documentation-page/blob/main/UntitledDiagram.drawio.svg)

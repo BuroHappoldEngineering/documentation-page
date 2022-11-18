@@ -1,0 +1,2696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>BH.Engine ‐ Create New Algorithms - BHoM wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-the-bhom-engine" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BHoM wiki" class="md-header__button md-logo" aria-label="BHoM wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BHoM wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BH.Engine ‐ Create New Algorithms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BHoM wiki" class="md-nav__button md-logo" aria-label="BHoM wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    BHoM wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to BHoM Wiki!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adapter-Actions---advanced-parameters/" class="md-nav__link">
+        Adapter Actions   advanced parameters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adapter-Actions/" class="md-nav__link">
+        Adapter Actions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          BH.Engine ‐ Create New Algorithms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        BH.Engine ‐ Create New Algorithms
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bhom-engine" class="md-nav__link">
+    What is the BHoM Engine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repo-structure" class="md-nav__link">
+    Repo Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#engine-actions" class="md-nav__link">
+    Engine actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    File Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-structure" class="md-nav__link">
+    Class Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-methods" class="md-nav__link">
+    Extension Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphic-extension-methods" class="md-nav__link">
+    Polymorphic Extension Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallback-methods" class="md-nav__link">
+    Fallback Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-execution-speed" class="md-nav__link">
+    What About Execution Speed ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runextensionmethod-pattern" class="md-nav__link">
+    RunExtensionMethod Pattern
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BH.UI-%E2%80%90-Expose-Your-Code-to-UIs/" class="md-nav__link">
+        BH.UI ‐ Expose Your Code to UIs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BH.oM-%E2%80%90-Define-New-Objects/" class="md-nav__link">
+        BH.oM ‐ Define New Objects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM-Structural-Conventions/" class="md-nav__link">
+        BHoM Structural Conventions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM-Units-conventions/" class="md-nav__link">
+        BHoM Units conventions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM-View-quality-conventions/" class="md-nav__link">
+        View quality conventions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Engine-Classes/" class="md-nav__link">
+        BHoM Engine Classes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create-a-new-adapter-in-10-minutes/" class="md-nav__link">
+        Create a new adapter in 10 minutes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-a-New-Repo/" class="md-nav__link">
+        Creating a New Repo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dataset-guidelines/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EngineClassMatchesFilePath/" class="md-nav__link">
+        EngineClassMatchesFilePath
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geometry/" class="md-nav__link">
+        Geometry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-started-for-developers/" class="md-nav__link">
+        Getting started for developers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Handling-Exceptional-Events/" class="md-nav__link">
+        Handling Exceptional Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IElement-required-extension-methods/" class="md-nav__link">
+        IElement required extension methods
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Icons/" class="md-nav__link">
+        Icons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Implement-an-Adapter/" class="md-nav__link">
+        Implement an Adapter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installing-BHoM/" class="md-nav__link">
+        Installing BHoM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-the-BHoM_Adapter/" class="md-nav__link">
+        Introduction to the BHoM Adapter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Null-Handling/" class="md-nav__link">
+        Null Handling
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Object-name-change-and-associated-custom-create-method/" class="md-nav__link">
+        Object name change and associated custom create method
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ObjectNameMatchesFileName/" class="md-nav__link">
+        ObjectNameMatchesFileName
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open-Sourcing-Procedure/" class="md-nav__link">
+        Open Sourcing Procedure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-References-and-Build-Paths/" class="md-nav__link">
+        Project References and Build Paths
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PropertyAccessorsHaveNoBody/" class="md-nav__link">
+        PropertyAccessorsHaveNoBody
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Releases-and-Versioning/" class="md-nav__link">
+        Releases and Versioning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shear-Area-Derivation/" class="md-nav__link">
+        Shear Area Derivation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural-Adapters/" class="md-nav__link">
+        Structural Adapters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure-of-the-BHoM/" class="md-nav__link">
+        Structure of the BHoM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Submitting-an-Issue/" class="md-nav__link">
+        Submitting an Issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-philosophy-of-the-BHoM/" class="md-nav__link">
+        Technical philosophy of the BHoM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-BHoM-Toolkit/" class="md-nav__link">
+        The BHoM Toolkit
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-CRUD-methods/" class="md-nav__link">
+        The CRUD methods
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-IImmutable-interface/" class="md-nav__link">
+        The IImmutable interface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-%60External%60-class/" class="md-nav__link">
+        The `External` class
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Toolkits-targeting-multiple-versions-of-the-same-software/" class="md-nav__link">
+        Toolkits targeting multiple versions of the same software
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-Visual-Studio/" class="md-nav__link">
+        Using Visual Studio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-the-BHoM/" class="md-nav__link">
+        Using the BHoM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-the-SCRUM-Board/" class="md-nav__link">
+        Using the SCRUM Board
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What-Is-the-BHoM-For/" class="md-nav__link">
+        What Is the BHoM For
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wiki-Style/" class="md-nav__link">
+        Wiki Style
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Working-Together-%E2%80%90-Avoiding-Conflicts/" class="md-nav__link">
+        Working Together ‐ Avoiding Conflicts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_Sidebar/" class="md-nav__link">
+         Sidebar
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_50" type="checkbox" id="__nav_50" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_50">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_50">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coding/2022-Q1---Reflection-oM-Engine-migration-to-Base-oM-Engine/" class="md-nav__link">
+        2022 Q1   Reflection oM Engine migration to Base oM Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coding/Code-Attributes/" class="md-nav__link">
+        Code Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coding/Coding-Style/" class="md-nav__link">
+        Coding Style
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coding/Resolving-an-Issue/" class="md-nav__link">
+        Resolving an Issue
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_51" type="checkbox" id="__nav_51" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_51">
+          Continuous Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Continuous Integration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_51">
+          <span class="md-nav__icon md-icon"></span>
+          Continuous Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/" class="md-nav__link">
+        Continuous Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/AssemblyInfo-compliance/" class="md-nav__link">
+        AssemblyInfo compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/AttributeHasEndingPunctuation/" class="md-nav__link">
+        AttributeHasEndingPunctuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-All/" class="md-nav__link">
+        Check All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Branch-Compliance/" class="md-nav__link">
+        Check Branch Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Code-Compliance/" class="md-nav__link">
+        Check Code Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Compliance/" class="md-nav__link">
+        Check Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Copyright-Compliance/" class="md-nav__link">
+        Check Copyright Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Core/" class="md-nav__link">
+        Check Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Dataset-Compliance/" class="md-nav__link">
+        Check Dataset Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Documentation-Compliance/" class="md-nav__link">
+        Check Documentation Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Installer/" class="md-nav__link">
+        Check Installer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Null-Handling/" class="md-nav__link">
+        Check Null Handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-PR-Builds/" class="md-nav__link">
+        Check-PR-Builds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Project-Compliance/" class="md-nav__link">
+        Check Project Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Ready-To-Merge/" class="md-nav__link">
+        Check Ready To Merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Required/" class="md-nav__link">
+        Check Required
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Serialisation/" class="md-nav__link">
+        Check Serialisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Unit-Tests/" class="md-nav__link">
+        Check Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Check-Versioning/" class="md-nav__link">
+        Check Versioning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/Code-Compliance/" class="md-nav__link">
+        Code Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasConstructor/" class="md-nav__link">
+        HasConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasDescriptionAttribute/" class="md-nav__link">
+        HasDescriptionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasOneConstructor/" class="md-nav__link">
+        HasOneConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasOutputAttribute/" class="md-nav__link">
+        HasOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasPublicGet/" class="md-nav__link">
+        HasPublicGet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasSingleClass/" class="md-nav__link">
+        HasSingleClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasSingleNamespace/" class="md-nav__link">
+        HasSingleNamespace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasUniqueMultiOutputAttributes/" class="md-nav__link">
+        HasUniqueMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasUniqueOutputAttribute/" class="md-nav__link">
+        HasUniqueOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasValidConstructor/" class="md-nav__link">
+        HasValidConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasValidCopyright/" class="md-nav__link">
+        HasValidCopyright
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasValidMultiOutputAttributes/" class="md-nav__link">
+        HasValidMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasValidOutputAttribute/" class="md-nav__link">
+        HasValidOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/HasValidPreviousVersionAttribute/" class="md-nav__link">
+        HasValidPreviousVersionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/InputAttributeHasMatchingParameter/" class="md-nav__link">
+        InputAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/InputAttributeIsUnique/" class="md-nav__link">
+        InputAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/InputParameterStartsLower/" class="md-nav__link">
+        InputParameterStartsLower
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsExtensionMethod/" class="md-nav__link">
+        IsExtensionMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsInputAttributePresent/" class="md-nav__link">
+        IsInputAttributePresent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsPublicClass/" class="md-nav__link">
+        IsPublicClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsPublicProperty/" class="md-nav__link">
+        IsPublicProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsStaticClass/" class="md-nav__link">
+        IsStaticClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsUsingCustomData/" class="md-nav__link">
+        IsUsingCustomData
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidConvertMethodName/" class="md-nav__link">
+        IsValidConvertMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidCreateMethod/" class="md-nav__link">
+        IsValidCreateMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidCreateMethodName/" class="md-nav__link">
+        IsValidCreateMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidDataset/" class="md-nav__link">
+        IsValidDataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidEngineClassName/" class="md-nav__link">
+        IsValidEngineClassName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsValidIImmutableObject/" class="md-nav__link">
+        IsValidIImmutableObject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/IsVirtualProperty/" class="md-nav__link">
+        IsVirtualProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/MethodNameContainsFileName/" class="md-nav__link">
+        MethodNameContainsFileName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/MethodNameStartsUpper/" class="md-nav__link">
+        MethodNameStartsUpper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/ModifyReturnsDifferentType/" class="md-nav__link">
+        ModifyReturnsDifferentType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/ModifyReturnsSameType/" class="md-nav__link">
+        ModifyReturnsSameType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/PreviousInputNamesAttributeHasMatchingParameter/" class="md-nav__link">
+        PreviousInputNamesAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Continuous%20Integration/PreviousInputNamesAttributeIsUnique/" class="md-nav__link">
+        PreviousInputNamesAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_52" type="checkbox" id="__nav_52" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_52">
+          Diffing and Hashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diffing and Hashing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_52">
+          <span class="md-nav__icon md-icon"></span>
+          Diffing and Hashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Configuring-Revit-objects-comparison-%28RevitComparisonConfig%29/" class="md-nav__link">
+        Configuring Revit objects comparison (RevitComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Configuring-objects-comparison-%28ComparisonConfig%29/" class="md-nav__link">
+        Configuring objects comparison (ComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Diffing-and-Hashing-%E2%80%93-guide-for-developers/" class="md-nav__link">
+        Diffing and Hashing – guide for developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Diffing-%E2%80%93-tracking-changes-in-your-BHoM-objects/" class="md-nav__link">
+        Diffing – tracking changes in your BHoM objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Hash-%E2%80%93-an-object%27s-identity/" class="md-nav__link">
+        Hash – an object's identity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_53" type="checkbox" id="__nav_53" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_53">
+          Versioning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versioning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_53">
+          <span class="md-nav__icon md-icon"></span>
+          Versioning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versioning/" class="md-nav__link">
+        Versioning BHoM objects and methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versioning/Backwards-compatibility/" class="md-nav__link">
+        Backwards compatibility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versioning/Change-to-a-property-name/" class="md-nav__link">
+        Change to a property name.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versioning/How-to-check-your-versioned-changes-are-working/" class="md-nav__link">
+        How to check your versioned changes are working ?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-bhom-engine" class="md-nav__link">
+    What is the BHoM Engine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repo-structure" class="md-nav__link">
+    Repo Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#engine-actions" class="md-nav__link">
+    Engine actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    File Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-structure" class="md-nav__link">
+    Class Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-methods" class="md-nav__link">
+    Extension Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polymorphic-extension-methods" class="md-nav__link">
+    Polymorphic Extension Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallback-methods" class="md-nav__link">
+    Fallback Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-execution-speed" class="md-nav__link">
+    What About Execution Speed ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runextensionmethod-pattern" class="md-nav__link">
+    RunExtensionMethod Pattern
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>BH.Engine ‐ Create New Algorithms</h1>
+
+<h2 id="what-is-the-bhom-engine">What is the BHoM Engine</h2>
+<p>The BHoM Engine repository contains all the functions and algorithms that process BHoM objects. </p>
+<p><a href="/BH.oM-‐-Define-New-Objects#BHoM-object-functionality-constructors-and-methods">As we saw earlier</a>, this structure gives us a few advantages, in particular:
+* we can see the BHoM object as a list of properties and their default values;
+* in the same way, <strong>the BHoM Engine can be seen as a big collection of functions</strong>.</p>
+<h2 id="repo-structure">Repo Structure</h2>
+<p>The BH.Engine repository is structured to reflect this strategy. The <a href="https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solutions">Visual Studio Solution</a> contains several different <a href="https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects">Projects</a>: </p>
+<p>[[/images/Project_List.png]]</p>
+<p>Each of those projects takes care of a different type of functionality. The "main" project however is the <strong>BHoM_Engine project</strong>: this contains everything that allows for basic direct processing of BHoM objects. The other projects are designed around a set of algorithms focused on a specific area such as geometry, form finding, model laundry or even a given discipline such as structure. </p>
+<blockquote>
+<p><strong>Why so many projects?</strong>  </p>
+<p>The main reason why the BHoM Engine is split in so many projects is to allow for a large number of people to be able to work simultaneously on different parts of the code.<br />
+Keep in mind that every time a file is added, deleted or even moved, <a href="https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#projects">this changes the project file itself</a>. Consequentially, submitting code to GitHub can become really painful when <a href="/Working-Together-‐-Avoiding-Conflicts">multiple people have modified the same files</a>.<br />
+Splitting code per project therefore limits the need to coordinate changes to the level of each focus group.</p>
+</blockquote>
+<p>Another benefit will be visible when we get to the "Toolkit" level: having different project makes it easier to manage Namespaces and make certain functionalities "extendable" in other parts of the code, such as in Toolkits.</p>
+<h2 id="folder-structure">Folder structure</h2>
+<p>If we look inside each Engine project, we can see that there are some folders. Those folders help categorize the code into specific actions. </p>
+<p>There are five possible <strong>action types</strong> that correspond to five different <strong>folder names</strong>: <em><strong>Compute</strong></em>, <em><strong>Convert</strong></em>, <em><strong>Create</strong></em>, <em><strong>Modify</strong></em>, and  <em><strong>Query</strong></em>. </p>
+<p>Let's consider the Geometry_Engine project; we can see that it contains all of those folders:</p>
+<p>[[/images/Folder_Structure.png]] </p>
+<p>Those five action names should be the same in all projects; however <strong>it's not mandatory that an Engine project should have all of them</strong>. </p>
+<p>Each folder contains C# files; those files must be named as the target of this action. </p>
+<h3 id="engine-actions">Engine actions</h3>
+<blockquote>
+<p><strong>What are those actions? How do I decide the right folder for my files?</strong>  </p>
+</blockquote>
+<p>In most cases, what the actions are (and, consequently, what the folders should contain) should be self-explanatory. However, for an in depth look and for your reference, you can <a href="BHoM_Engine-Namespaces">have a look here</a>.  </p>
+<blockquote>
+<p>For example, the files contained in the <code>Create</code> folder will be responsible for instantiating new objects of a certain type. On the other hand, files in the <code>Query</code> folder will be retrieving information, while those in the <code>Compute</code> will be calculating things.  </p>
+</blockquote>
+<p>If you are in doubt, try finding another file that does a similar thing in another project, and see where that is placed.</p>
+<p>For example, in the Geometry_Engine project there is a <code>Query</code> folder that contains, among others, a <code>Length.cs</code> file. This file contains methods that take care of Querying the Length for geometric objects. Consider that another equally named <code>Length.cs</code> file might be present in the <code>Query</code> folder of other Engine projects; this is the case, for example, of the Structure_Engine project, where the file contains method to compute the link of <code>Bars</code> (structural objects).</p>
+<h2 id="file-structure">File Structure</h2>
+<p>The file is structured in a slightly unusual way for people used to classic object-oriented programming, so let's look at an example. The following is an extract from the <code>ClosestPoint.cs</code> file of the <code>Geometry_Engine</code> project.</p>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Query
+    {
+        /***************************************************/
+        /**** Public Methods - Vectors                  ****/
+        /***************************************************/
+
+        public static Point ClosestPoint(this Point pt, Point point) {...}
+
+        /***************************************************/
+
+        public static Point ClosestPoint(this Vector vector, Point point) {...}
+
+        /***************************************************/
+
+        public static Point ClosestPoint(this Plane plane, Point point) {...}
+
+
+        /***************************************************/
+        /**** Public Methods - Curves                   ****/
+        /***************************************************/
+
+        public static Point ClosestPoint(this Arc arc, Point point) {...}
+
+        /***************************************************/
+
+        public static Point ClosestPoint(this Circle circle, Point point) {...}
+
+        /***************************************************/
+
+        ...
+    }
+}
+</code></pre>
+<p>A few things should be noted:</p>
+<ul>
+<li>
+<p>The Namespace always starts with <code>BH.Engine</code> followed by the project name (without the suffix "__Engine_", obviously). </p>
+</li>
+<li>
+<p>The file should contain <strong>one and only one class, named like the containing folder</strong>. For example, any C# file contained in the "Query" folder will contain only one class called <code>Query</code>.</p>
+</li>
+<li>
+<p>Consequently, the name of the file itself will not correspond to the name of the class, as it is usually recommended in Object Oriented Programming. The file name will generally only reflect the name of the methods defined in it. </p>
+</li>
+<li>
+<p>Note that the class is declared as a <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods">partial class</a>. Also note that the class is declared as <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members">static</a>. </p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Static and partial</strong> </p>
+<p>The last point might be a bit cryptic for those that are not fluent in C#. Here is a brief explanation that should be enough to move on the next topics.</p>
+<p><em>static</em> means that the content of the class is available without the need to create (instantiate) an object of that class. However, that requires that all the functions contained in the class are declared <em>static</em> as well. </p>
+<p>On the other hand, <em>partial</em> means that the full content of that class can be spread between multiple files. </p>
+<p>Having the engine action classes declared as static and partial helps us simplifying the structure of the code and expose only the relevant bits to the average contributors.</p>
+</blockquote>
+<h2 id="class-structure">Class Structure</h2>
+<p>Fluent C# users should have no problem understanding the structure of Engine classes. </p>
+<p>For those that want to get stuck without too many technical details, here are a few instructions on how to edit the action classes.</p>
+<ul>
+<li>Inside the class, create a function for each type of object you want to be able to handle. Notice that all the methods have the same name and possibly additional parameters, the only difference is the type of the first argument and possibly the return type. </li>
+<li>Write <em><strong>this</strong></em> in front of the first argument of each function. This will for example allow to call the methods shown above using the dot <code>.</code> notation. For example, if you have an instance of an <code>Arc</code> type called <code>myArc</code>, you will be able to do <code>myArc.ClosestPoint(refPoint)</code>. This way of defining functions is called <em>Extension Methods</em> and will be better explained below.</li>
+<li>If you find yourself typing the same code for multiple functions (or even inside the same function), you can still create private static methods. Just make sure you place them in a separate <em>private</em> section (use same 3 line comment) after the public methods. In rare cases, you might also want to have your own private data structure for convenience. If that data structure will never be used elsewhere, just define it at the end of the class.</li>
+</ul>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Modify
+    {
+        /***************************************************/
+        /**** Public Methods                            ****/
+        /***************************************************/
+
+        public static Mesh MergeVertices(this Mesh mesh, double tolerance = 0.001) //TODO: use the point matrix {...}
+
+
+        /***************************************************/
+        /**** Private Methods                           ****/
+        /***************************************************/
+
+        private static void SetFaceIndex(List&lt;Face&gt; faces, int from, int to) {...}
+
+
+        /***************************************************/
+        /**** Private Definitions                       ****/
+        /***************************************************/
+
+        private struct VertexIndex {...}
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Advanced topics</strong></p>
+<p>While you might be able to write code in the BHoM Engine for a time without needing more than what has been explained so far, you should try to read the rest of the page.<br />
+The concepts presented below are a bit more advanced; if you follow them, however, you will be able to provide a better experience to those using your code. Knowing what <strong>Polymorphism</strong> is and what the C# <code>dynamic</code> type is will also likely get you out of problematic situations, especially when you are using code from people that have not read the rest of this page.</p>
+</blockquote>
+<h2 id="extension-methods">Extension Methods</h2>
+<p>A concept that is very useful in order to improve the use of your methods is the concept of extension methods. You can see on the example code below that we get the bounding box of a set of mesh vertices (i.e. a List of Points) by calling <strong><em>mesh.Vertices.Bounds()</em></strong>. Obviously, the List class doesn't have a Bounds method defined in it. The same goes for the BHoM objects; they even don't contain any method at all. The definition of the Bound method is actually in the BHoM Engine. In order for any BHoM objects (and even a List) to be able to call <em>self.Bounds()</em>, we use extension methods. Those are basically injecting functionality into an object from the outside. Let's look into how they work:</p>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Query
+    {
+        ...
+
+        /***************************************************/
+        /**** public Methods - Others                  ****/
+        /***************************************************/
+
+        public static BoundingBox Bounds(this List&lt;Point&gt; pts) {...}
+
+        /***************************************************/
+
+        public static BoundingBox Bounds(this Mesh mesh)
+        {
+            return mesh.Vertices.Bounds();
+        }
+
+        /***************************************************/
+
+        ...
+
+    }
+}
+</code></pre>
+<p>Here is the properties of the <em><strong>Mesh</strong></em> object for reference:</p>
+<pre><code class="language-c#">namespace BH.oM.Geometry
+{
+    public class Mesh : IBHoMGeometry
+    {
+        /***************************************************/
+        /**** Properties                                ****/
+        /***************************************************/
+
+        public List&lt;Point&gt; Vertices { get; set; } = new List&lt;Point&gt;();
+
+        public List&lt;Face&gt; Faces { get; set; } = new List&lt;Face&gt;();
+
+
+        /***************************************************/
+        /**** Constructors                              ****/
+        /***************************************************/
+
+        ...
+    }
+}
+</code></pre>
+<p>Notice how each method has a <strong><em>this</em></strong> in front of their first parameter. This is all that is needed for a static method to become an extension method. Note that we can still calculate the bounding box of a geometry by calling <strong><em>BH.Engine.Geometry.Query.Bounds(geom)</em></strong> instead of <strong><em>geom.Bounds()</em></strong> but this is far more cumbersome.</p>
+<p>To be complete, we should also mention that we could simply call <strong><em>Query.Bounds(geom)</em></strong> as long as <strong>using <em>BH.Engine.Geometry</em></strong> is defined at the top of the file.</p>
+<h2 id="polymorphism">Polymorphism</h2>
+<p>While not completely necessary to be able to write methods for the BHoM Engine, <strong><em>Polymorphism</em></strong> is still a very important concept to understand. Consider the case where we have a list of objects and we want to calculate the bounding box of each of them. We want to be able to call <strong><em>Bounds()</em></strong> on each of those object without having to know what they are. More concretely, let's consider we want to calculate the bounding box of a polycurve. In order to do so, we need to first calculate the bounding box of each of its sub-curve but we don't know their type other that it is a form of curve (i.e. line, arc, nurbs curve,...). Note that <em><strong>ICurve</strong></em> is the interface common to all the curves.</p>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Query
+    {
+        ...
+
+        /***************************************************/
+
+        public static BoundingBox Bounds(this PolyCurve curve)
+        {
+            List&lt;ICurve&gt; curves = curve.Curves;
+
+            if (curves.Count == 0)
+                return null;
+
+            BoundingBox box = Bounds(curves[0] as dynamic);
+            for (int i = 1; i &lt; curves.Count; i++)
+                box += Bounds(curves[i] as dynamic);
+
+            return box;
+        }
+
+        /***************************************************/
+
+        ...
+
+    }
+}
+</code></pre>
+<p>Polymorphism, as defined by <a href="https://en.wikipedia.org/wiki/Polymorphism_(computer_science)">Wikipedia</a>, is the provision of a single interface to entities of different types. This means that if we had a method <strong>Bounds(ICurve curve)</strong> defined somewhere, thanks to polymorphism, we could pass it any type of curve that inherits from the interface ICurve.</p>
+<p>The other way around doesn't work though. If you have a series of methods implementing <em><strong>Bounds()</strong></em> for every possible ICurve, you cannot call <strong>Bounds(ICurve curve)</strong> and expect it to work since C# has no way of making sure that all the objects inheriting from ICurve will have the corresponding method. In order to ask C# to trust you on this one, you use the keyword <em><strong>dynamic</strong></em> as shown on the example above. This tells C# to figure out the real type of the ICurve during execution and call the corresponding method.</p>
+<h2 id="polymorphic-extension-methods">Polymorphic Extension Methods</h2>
+<p>Alright. Let's summarize what we have learnt from the last two sections:</p>
+<ul>
+<li>
+<p>Using method overloading (all methods of the same name taking different input types), we don't need a different name for each argument type. So for example, calling <strong>Bounds(obj)</strong> will always work as long as there is a <strong>Bounds</strong> methods accepting the type of obj as first argument.</p>
+</li>
+<li>
+<p>Thanks to extension methods, we can choose to call a method like <strong>Bound</strong> by either calling <strong>Query.Bounds(obj)</strong> or <strong>obj.Bounds()</strong>. </p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/using-type-dynamic">Thanks to the <code>dynamic</code> type</a>, we can call a method providing an interface type that has not been explicitly covered by a method definition. For example, We can call <strong>Bounds</strong> on an ICurve even if <strong>Bounds(ICurve)</strong> is not defined. </p>
+</li>
+</ul>
+<p>Great! We are still missing one case though: what if we want to call obj.Bounds() when obj is an ICurve? So on the example of the PolyCurve provided above, what if we wanted to replace </p>
+<pre><code class="language-c#">box += Bounds(curves[i] as dynamic); 
+</code></pre>
+<p>with </p>
+<pre><code class="language-c#">box += curves[i].Bounds();
+</code></pre>
+<p>But why? We have a perfectly valid way to call <strong>Bounds</strong> on an ICurve already with the first solution. Why the need for another way? Same thing as for the extention methods: it is more compact and being able to have auto-completion after the dot is very convenient when you don't know/remember the methods available. </p>
+<p>So if you want to be really nice to the people using your methods, there is a solution for you:</p>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Query
+    {
+        ...
+
+        /***************************************************/
+        /**** Public Methods - Interfaces               ****/
+        /***************************************************/
+
+        public static BoundingBox IBounds(this IBHoMGeometry geometry)
+        {
+            return Bounds(geometry as dynamic);
+        }
+    }
+}
+</code></pre>
+<p>If you add this code at the end of your class, this code will now work:</p>
+<pre><code class="language-c#">ICurve curve = ...;
+curve.IBounds();
+</code></pre>
+<p>Two comments on that:
+- We used IBHoMGeometry here because every geometry implements Bounds, not just the ICurves. ICurve being a IBHoMGeometry, it will get access to <strong>IBounds()</strong>. (Read the section on polymorphism again if that is not clear to you why). In the case of a method X only supporting curves such as <strong>StartPoint</strong> for example, our interface method will simply be <strong>StartPoint(ICurve)</strong>.
+- The "<strong>I</strong>" in front of IBounds() is <strong>VERY IMPORTANT</strong>. If you simply call that method <strong>Bounds</strong>, it will have same name as the other methods with specific type. Say you call this method with a geometry that doesn't have a corresponding <strong>Bounds</strong> method implemented so the only one match is <strong>Bounds(IBHoMGeometry)</strong>. In that case, <strong>Bounds(IBHoMGeometry)</strong> will call itself after the conversion to dynamic. You therefore end up with an infinite loop of the method calling itself.</p>
+<p>PS: before anyone asks, using <strong>((dynamic)curve).Bounds();</strong> is not an option. Not only it crashes at run-time (dynamic and extension methods are not supported together in C#), it will not provides you with the auto completion you are looking for since the real type cannot be know statically.</p>
+<h2 id="fallback-methods">Fallback Methods</h2>
+<p>But what if we do not have a method implemented for every type that that can be dynamically called by <strong>IBounds</strong>? That is what private fallback methods are for. In general fallback methods are used for handling unexpected behaviours of main method. In this case it should log an error with a proper message (see <a href="/Handling-Exceptional-Events">Handling Exceptional Events</a> for more information) and return null or NaN.</p>
+<pre><code class="language-c#">namespace BH.Engine.Geometry
+{
+    public static partial class Query
+    {
+        ...
+
+        /***************************************************/
+        /**** Private Methods - Fallback                ****/
+        /***************************************************/
+
+        private static BoundingBox Bounds(IGeometry geometry)
+        {
+            Reflection.Compute.RecordError($&quot;Bounds is not implemented for IGeometry of type: {geometry.GetType().Name}.&quot;);
+            return null;
+        }
+
+        /***************************************************/
+
+        ...
+    }
+}
+</code></pre>
+<p>Being private and having an interface as the input prevents it from being accidentally called. It will be triggerd only if <strong>IBounds()</strong> couldn't find a proper method for the input type.</p>
+<p>Additional comment:
+- At this moment BHoM does not handle nullable booleans. This means it is impossible to return null from a bool method. In such cases fallback methods can throw <code>[NotImplementedException]</code>.</p>
+<h2 id="what-about-execution-speed">What About Execution Speed ?</h2>
+<p>For the most experienced developers among you, some might worried about execution speed of this solution. Indeed, we are not only using extension methods but also the conversion to a dynamic object. This approach means that every method call of objects represented by an interface is actually translated into two (call to the public polymorphic methods and then to the private specific one). </p>
+<p>Thankfully, tests have shown that efficiency lost is minimal even for the smallest functions. Even a method that calculates the length of a vector (1 square root, 3 multiplications and 2 additions) is running at about 75% of the speed, which is perfectly acceptable. As soon as the method become bigger, the difference becomes negligible. Even a method as light as calculating the length of a short polyline doesn't show more than a few % in speed difference.</p>
+<p>[[/images/PolymorphicExtention_SpeedTest.png]] </p>
+<h2 id="runextensionmethod-pattern">RunExtensionMethod Pattern</h2>
+<p>The concept of polymorphic extension methods explained above has one serious limitation: it works only if all methods aimed to be called by the dynamically cast object are contained within one class. That is not the case e.g. for <code>Geometry</code> method, which is divided into a series of <code>Query</code> classes spread across discipline-specific namespaces: <code>BH.Engine.Structure</code>, <code>BH.Engine.Geometry</code> etc. To enable <code>IGeometry</code> method, a special pattern based on <code>RunExtensionMethod</code> needs to be applied:</p>
+<pre><code class="language-c#">namespace BH.Engine.Spatial
+{
+    public static partial class Query
+    {
+        /******************************************/
+        /****            IElement0D            ****/
+        /******************************************/
+
+        [Description(&quot;Queries the defining geometrical object which all spatial operations will act on.&quot;)]
+        [Input(&quot;element0D&quot;, &quot;The IElement0D to get the defining geometry from.&quot;)]
+        [Output(&quot;point&quot;, &quot;The IElement0Ds base geometrical point object.&quot;)]
+        public static Point IGeometry(this IElement0D element0D)
+        {
+            return Reflection.Compute.RunExtensionMethod(element0D, &quot;Geometry&quot;) as Point;
+        }
+
+        /******************************************/
+    }
+}
+</code></pre>
+<p><code>RunExtensionMethod</code> method is a Reflection-based mechanism that runs the extension method relevant to type of the argument, regardless the class in which that actual method is implemented. In the case above, <code>IGeometry</code> method belongs to <code>BH.Engine.Spatial.Query</code> class, while e.g. the method for <code>BH.oM.Geometry.Point</code> (which implements <code>IElement0D</code> interface) would be in <code>BH.Engine.Geometry.Query</code> - thanks to calling <code>RunExtensionMethod</code> instead of dynamic casting it can be called successfully. The next code snippet shows the same mechanism for methods with more than one input argument (in this case being an <code>IElement0D</code> to be modified and a <code>Point</code> to overwrite the geometry of the former).</p>
+<pre><code class="language-c#">namespace BH.Engine.Spatial
+{
+    public static partial class Modify
+    {
+        /******************************************/
+        /****            IElement0D            ****/
+        /******************************************/
+
+        [Description(&quot;Modifies the geometry of a IElement0D to be the provided point's. The IElement0Ds other properties are unaffected.&quot;)]
+        [Input(&quot;element0D&quot;, &quot;The IElement0D to modify the geometry of.&quot;)]
+        [Input(&quot;point&quot;, &quot;The new point geometry for the IElement0D.&quot;)]
+        [Output(&quot;element0D&quot;, &quot;A IElement0D with the properties of 'element0D' and the location of 'point'.&quot;)]
+        public static IElement0D ISetGeometry(this IElement0D element0D, Point point)
+        {
+            return Reflection.Compute.RunExtensionMethod(element0D, &quot;SetGeometry&quot;, new object[] { point }) as IElement0D;
+        }
+
+        /******************************************/
+    }
+}
+</code></pre>
+<p>Naturally, in order to enable the use of <code>RunExtensionMethod</code> pattern by a given type, a correctly named extension method taking argument of such type needs to be implemented.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Adapter-Actions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adapter Actions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Adapter Actions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../BH.UI-%E2%80%90-Expose-Your-Code-to-UIs/" class="md-footer__link md-footer__link--next" aria-label="Next: BH.UI ‐ Expose Your Code to UIs" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              BH.UI ‐ Expose Your Code to UIs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+  </body>
+</html>

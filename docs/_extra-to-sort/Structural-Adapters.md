@@ -1,4 +1,4 @@
-## Intro
+## Structural adapters
 
 This page gives examples and outlines the general common behaviour of the adapters communicating with structural software packages. To get an general introduction to how the adapters are working, please see [this page](The-Adapter-Interface).
 

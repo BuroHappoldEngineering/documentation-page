@@ -1,3 +1,5 @@
+# Create a new adapter in 10 minutes
+
 ▶️ After this, you can find more information in _[Introduction to the BHoM_Adapter](/Introduction-to-the-BHoM_Adapter)_ and following pages.
 
 ___________________________________________________________________
@@ -18,7 +20,7 @@ ___________________________________________________________________
 <br/>
 
 
-# Create a new adapter in 10 minutes
+
 
 An Adapter is the part of BHoM that enables connection to and from external software.
 

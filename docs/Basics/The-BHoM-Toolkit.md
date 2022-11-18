@@ -6,7 +6,7 @@ ___________________________________________________________________
 
 <br/>
 
-> ## :warning: Note :warning:
+> ## ⚠️ Note ⚠️
 > Before reading this page, please check out:
 > - [Getting started for developers](/Getting-started-for-developers)
 > - [Introduction to BHoM_Adapter](/Introduction-to-the-BHoM_Adapter)

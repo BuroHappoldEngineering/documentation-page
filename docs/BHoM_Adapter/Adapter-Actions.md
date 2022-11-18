@@ -6,7 +6,7 @@ ___________________________________________________________________
 
 <br/>
 
-> ### :warning: Note :warning:
+> ### ⚠️ Note ⚠️
 > Before reading this page, make sure you have read the [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter).
 
 <br/>

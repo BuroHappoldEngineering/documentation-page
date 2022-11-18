@@ -1,4 +1,4 @@
-Welcome Developers! :rocket:
+Welcome Developers! 🚀
 
 Here's a quick start guide. After reading this, you might want to head to the [Introduction to BHoM_Adapter](/Introduction-to-the-BHoM_Adapter), and then [create your own Toolkit](/The-BHoM-Toolkit).
 
@@ -53,7 +53,7 @@ You might find them useful 🚀
 - [Versioning_Toolkit](https://github.com/BHoM/Versioning_Toolkit) - allows retro-compatibility of components (auto upgrade to newest version).
 
 
-## Toolkits :earth_africa:
+## Toolkits 🌍
 
 Toolkits provide the connection to other software.
 

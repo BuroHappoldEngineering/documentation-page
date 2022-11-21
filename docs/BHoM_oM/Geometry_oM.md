@@ -1,5 +1,5 @@
-## Geometry 
-### Geometry_oM
+# Geometry_oM 
+
 Geometry_oM is the core library, on which all engineering BHoM objects are based. It provides a common foundation that allows to store and represent spatial information about any type of object in any scale: building elements, their properties and others, both physical and abstract.
 
 All objects can be found [here in the Geometry_oM](https://github.com/BHoM/BHoM/tree/master/Geometry_oM)
@@ -20,7 +20,7 @@ The code is divided into a few thematic domains, each stored in a separate folde
 All classes belong to one namespace (`BH.oM.Geometry`) with one exception of Coordinate Systems, which live under `BH.oM.Geometry.CoordinateSystem`. 
 All methods referring to the geometry belong to `BH.Engine.Geometry` namespace, which is a part of the [BHoM_Engine](/BHoM_Engine-Namespaces).
  
-### Interfaces
+## Interfaces
 Two separate families of interfaces coexist in Geometry_oM. First of them organizes the classes within the namespace:
 
 |Interface | Implementing classes |
@@ -38,7 +38,7 @@ The other extends the applicability of the geometry-related methods to all objec
 | `IElement2D` | All classes represented by a planar set of closed `ICurves` (e.g. building panels) |
 | `IElement3D` | All classes represented by a closed volume (e.g. room spaces) - _not implemented yet_ |
 
-### Tolerances
+## Tolerances
 There is a range of constants representing default tolerances depending on the tolerance type and scale of the model:
 
 | Scale | Value |
@@ -48,12 +48,12 @@ There is a range of constants representing default tolerances depending on the t
 | Macro | 1e-3 |
 | Angle | 1e-6 |
 
-### Conversion to proprietary software packages
+## Conversion to proprietary software packages
 While being pulled/pushed through the Adapters, the BHoM geometry is converted to relevant geometry format used by each software package.
 
 [BHoM Rhinoceros conversion table](https://github.com/BHoM/Rhinoceros_Toolkit/wiki/BHoM---Rhinoceros-conversion-table)
 
-### Known issues
+## Known issues
 At the current stage, Geometry_oM bears a few limitations:
 - Nurbs are not supported (although there is a framework for them in place)
 - 3-dimensional objects (curved surfaces, volumes etc.) are not supported with a few exceptions

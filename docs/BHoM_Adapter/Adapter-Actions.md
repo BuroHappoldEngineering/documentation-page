@@ -2,7 +2,7 @@
 
 ◀️ Previous read: _[introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter)_
 
-▶️ Next read: _[The BHoM Toolkit](/BHoM_Adapter/The-BHoM-Toolkit)._
+▶️ Next read: _[The BHoM Toolkit](../Basics/The-BHoM-Toolkit.md)_ and _[The BHoM Toolkit](/BHoM_Adapter/The-CRUD-methods.md)._
 
 ___________________________________________________________________
 

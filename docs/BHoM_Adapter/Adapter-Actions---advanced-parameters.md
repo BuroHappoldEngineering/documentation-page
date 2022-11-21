@@ -1,9 +1,9 @@
 # Adapter Actions: advanced parameters 
 
 > ### Note
-> This page can be seen as an Appendix to the pages [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter) and [Adapter Actions](/BHoM_Adapter/Adapter-Actions).
+> This page can be seen as an Appendix to the pages [Introduction to BHoM_Adapter](./index.md) and [Adapter Actions](./Adapter-Actions.md).
 
-The Adapter Actions have some particular input parameters that have not been covered in the [introduction to the BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter). These are:
+The Adapter Actions have some particular input parameters that have not been covered in the [introduction to the BHoM_Adapter](./index.md). These are:
 
 - the **ActionConfig** (used by all Actions: Push, Pull, Move, Remove, Execute);
 - the **Requests** (used by the Pull)
@@ -13,7 +13,7 @@ The Adapter Actions have some particular input parameters that have not been cov
 
 The ActionConfig is an object type used to specify any kind of Configuration that might be used by the Adapter Actions. 
 
-This means that it can contain configurations that are specific to certain Actions (e.g. only to the Push, only to the Pull), and that a certain Push might be activated with a different Push ActionConfig than another one. This makes the ActionConfig different from the [Adapter Settings](/BHoM_Adapter/The-BHoM-Toolkit#the-adapter-settings) (which are `static` global settings).
+This means that it can contain configurations that are specific to certain Actions (e.g. only to the Push, only to the Pull), and that a certain Push might be activated with a different Push ActionConfig than another one. This makes the ActionConfig different from the [Adapter Settings](./Implement-an-Adapter.md#the-adapter-settings) (which are `static` global settings).
 
 The base ActionConfig provides some configurations that are available to all Toolkits (you can find more info about those in the code itself).
 
@@ -78,5 +78,5 @@ In case you need to use the Name field of the external object model, the format 
 Name __Tags__:tag1_/_tag2_/_tag3
 ```
 
-For an in depth explanation on how tags are used and what you should be implementing for them to work, read the Push section of our [Adapter Actions](/BHoM_Adapter/Adapter-Actions) page; in particular, look at the [practical example](/BHoM_Adapter/Adapter-Actions#a-practical-example).  
+For an in depth explanation on how tags are used and what you should be implementing for them to work, read the Push section of our [Adapter Actions](./Adapter-Actions.md) page; in particular, look at the [practical example](./Adapter-Actions.md#a-practical-example).  
 

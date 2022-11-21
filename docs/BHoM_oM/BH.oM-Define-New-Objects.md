@@ -1,6 +1,12 @@
+# The Object Model (oM): define new objects
+
+This section introduces the `BHoMObject`, which is the foundational class for most of the Objects found in BHoM.
+
+We also introduce the `IObject`, the base interface for everything in BHoM.
+
 ## BHoMObject Code Structure and Content
 
-A typical BHoM object definition will be no more than the list of properties. _That's it!_ No constructors or anything needed here.
+A typical BHoM object definition is given simply by defining a class with some public properties. _That's it!_ No constructors or anything needed here.
 
 Here is an example of what a BHoM object definition looks like:
 
@@ -27,9 +33,8 @@ namespace BH.oM.Acoustic
 }
 ```
 
-In general, everything in the BHoM will be a BHoM object. 
-The **only exceptions** to this rule are **Geometries** and **Results**.
-
+In general, most classes defined in BHoM are a BHoM object, except particular cases. 
+Among these exceptions, you can find **Geometry** and **Result** types.
 The reason for this is both conceptual and to aid performance. Geometries and Results are not "objects" in the strict sense of the term. In addition, separating those types from actual `BHoMObject` objects greatly helps with performance down the line.
 
 

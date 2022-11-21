@@ -1,6 +1,6 @@
 ◀️ Previous read: _[The Adapter Actions](/Adapter-Actions)_
 
-▶️ Next read: _[The CRUD methods](/The-CRUD-methods)_
+▶️ Next read: _[The CRUD methods](../BHoM_Adapter/The-CRUD-methods)_
 
 ___________________________________________________________________
 
@@ -65,7 +65,7 @@ Use the [template repository](https://github.com/BHoM/template-repository) to cr
 The oM should contain property-only classes that make the schema for your Toolkit. All functionality should be placed in the Engine.
 Functionality that is specific to a class should be defined in the Engine as an extension method. 
 
-See /BH.oM-%E2%80%90-Define-New-Objects and /BH.Engine-%E2%80%90-Create-New-Algorithms for more information.
+See [The Object Model](../BHoM_oM/BH.oM-Define-New-Objects.md) and [The Engine](../BHoM_Engine/index.md) for more information.
 
 
 ## Implement the Engine

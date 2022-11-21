@@ -14,7 +14,7 @@ There is no common language (BHoM) that allows a complete communication with oth
 Although this is the fastest method to reflect an assembly, it does not guarantee that all the reflected methods will be usable, since no curation of the process is in place
 
 To perform a simple reflection, you need to:
-- Have the `Engine` project that corresponds to the assembly you want to reflect, e.g. `Numpy_Engine`. It follows the [usual Engine rules](/BH.Engine-%E2%80%90-Create-New-Algorithms).
+- Have the `Engine` project that corresponds to the assembly you want to reflect, e.g. `Numpy_Engine`. It follows the [usual Engine rules](../../BHoM_Engine/index.md).
 - Implement the `External` class, the same way you would implement a `Create` or `Query` class.
 - Provide, in that class, two methods:
   - `public static List<MethodInfo> Methods()`

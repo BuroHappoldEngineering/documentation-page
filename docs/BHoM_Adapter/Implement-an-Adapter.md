@@ -1,65 +1,30 @@
 # Implement an Adapter 
 
-◀️ Previous read: _[The BHoM Toolkit](/The-BHoM-Toolkit)_
+◀️ Previous read: _[The BHoM Toolkit](../Basics/The-BHoM-Toolkit.md)_
 
-▶️ Next read: _[The CRUD methods](/The-CRUD-methods)_
+▶️ Next read: _[The CRUD methods](./The-CRUD-methods)_
 
 ___________________________________________________________________
 
-<br/>
 
 > ## ⚠️ Note ⚠️
 > Before reading this page, please check out:
-> - [Getting started for developers](/Getting-started-for-developers)
-> - [Introduction to BHoM_Adapter](/Introduction-to-the-BHoM_Adapter)
-> - [Adapter Actions](/Adapter-Actions)
-> - [The BHoM Toolkit](/The-BHoM-Toolkit)
+> - [Getting started for developers](../Contributing/Getting-started-for-developers.md)
+> - [Introduction to BHoM_Adapter](./index.md)
+> - [Adapter Actions](./Adapter-Actions.md)
+> - [The BHoM Toolkit](../Basics/The-BHoM-Toolkit.md)
 
-
-<br/>
-
-This page explains how to develop what we call a **Toolkit**.
-
-<br/>
 
 ___________________________________________________________________
 
-<br/>
 
 
-## Contents
+## The Toolkit containing the adapter
 
-<!-- Start Document Outline -->
-
-
-
-* [Main Adapter file and constructor](#main-adapter-file-and-constructor)
-* [The Adapter Settings](#the-adapter-settings)
-* [Implement the CRUD methods](#implement-the-crud-methods)
-* [Additional methods and properties](#additional-methods-and-properties)
-* [Dependency types](#dependency-types)
-* [Comparers](#comparers)
-* [Overriding the Adapter Actions](#overriding-the-adapter-actions)
+See the page dedicated to the _[The BHoM Toolkit](../Basics/The-BHoM-Toolkit.md)_ to learn how to set up a Toolkit, which can then contain an Adapter.
 
 
-
-
-<!-- End Document Outline -->
-
-<br/>
-
-___________________________________________________________________
-
-<br/>
-
-
-## Implement the Adapter
-
-See the dedicated page to Implementing an Adapter.
-
-The template creates the correct file names, class names and namespaces to be used for you. 
-
-### Main Adapter file and constructor
+## Main Adapter file and constructor
 The main Adapter file sits in the root of the Adapter project and must have a name in the format `SoftwareNameAdapter.cs`.
 
 The content of this file should be limited to the following items:
@@ -73,20 +38,28 @@ The constructor should define some or all of the Adapter properties:
    - any other protected/private property as needed.
 - A few protected/private fields (methods or variables) that you might need share between all the Adapter files (given that the Adapter is a `partial` class, so you may share variables across different files). Please limit this to the essential.
 
-### The Adapter Settings
-The Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter.
 
-It means that these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](/Adapter-Actions---advanced-parameters#actionconfig)).
+## The Adapter Actions
 
-The base BHoM_Adapter code gives you extensive explanation in the comments about them. 
+### Overriding the Adapter Actions
+If you want, you can override one or more of the Adapter Actions. This can be useful for quick development.
+ 
+All Action methods are [defined as `virtual`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual), so [you can `override` them](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/override). 
 
-We will encounter a few of them in more detail in other sections of the wiki.
+In order to reuse the existing logic embedded in the Adapter Actions, you should not override them. This requires the implementation of CRUD methods which will be called by the Actions. Continue reading to learn more.
 
-### Implement the CRUD methods
+## The Adapter Settings
+The Adapter settings are general settings that can be used by the Adapter Actions and/or the CRUD methods. 
+
+You can define them as you want; just consider that the settings are supposed to stay the same across any instance of the same adapter, i.e. the Adapter Settings are global `static` settings valid for all instances of your Toolkit Adapter. In other words, these settings are independent of what Action your Toolkit is doing (unlike the [ActionConfig](/BHoM_Adapter/Adapter-Actions---advanced-parameters#actionconfig)). If you want to create settings that affect a specific action, implement an ActionConfig instead.
+
+The base [BHoM_Adapter code](https://github.com/BHoM/BHoM_Adapter) gives you extensive explanation/descriptions/comments about the Adapter Settings. 
+
+## Implement the CRUD methods
 
 The CRUD folder should contain all the needed CRUD methods. 
 
-You can see the [CRUD methods implementation details in their dedicated page](/The-CRUD-methods).
+You can see the [CRUD methods implementation details in their dedicated page](/BHoM_Adapter/The-CRUD-methods).
 
 Here we will cover a convention that we use in the code organisation: the CRUD "interface methods".
 
@@ -106,7 +79,7 @@ The the statement `CreateObject((obj as dynamic))` does what is called **dynamic
 
 
 
-### Additional methods and properties
+## Additional methods and properties
 The mapping from the Adapter Actions to the CRUD methods does need some help from the developer of the Toolkit. 
 
 This is generally done through additional methods and properties that need to be implemented or populated by the developer.
@@ -135,7 +108,7 @@ We can't have a generalised relationship between the beams and the loads, becaus
 > You can also avoid creating a relationship chain at all - if you are fine with exporting a flat collection of objects.   You can activate/deactivate this Adapter feature by configure the Setting: `m_AdapterSettings.HandleDependencies` to true or false. If you enable this, you must implement `DependencyTypes` as explained below.
 
 
-#### Dependency types in practice
+### Dependency types in practice
 We solve this situation by defining the `DependencyTypes` property:
 ```cs
 Dictionary<Type, List<Type>> DependencyTypes { get; }
@@ -157,14 +130,14 @@ DependencyTypes = new Dictionary<Type, List<Type>>
 
 
 ### Comparers
-The comparison between objects is needed in many scenarios, most notably [in the Push, when you need to tell an old object from a new one](/Adapter-Actions#push).
+The comparison between objects is needed in many scenarios, most notably [in the Push, when you need to tell an old object from a new one](/BHoM_Adapter/Adapter-Actions#push).
 
 In the same way that the BHoM Object model cannot define all possible relationships between the object types, it is also not possible to collect all possible ways of comparing the object with each other. Some software might want to compare two objects in a way, some in another.
 
 > #### Note: optional feature
 > You can also avoid creating a default comparers - if you are fine for the BHoM to use the default C# [IEqualityComparer](https://msdn.microsoft.com/en-us/library/ms132151(v=vs.110).aspx).  
 
-#### Adapter Comparers in practice
+### Adapter Comparers in practice
 
 By default, if no specific Comparer is defined in the Toolkit, the Adapter uses the [IEqualityComparers](https://msdn.microsoft.com/en-us/library/ms132151(v=vs.110).aspx) to compare the objects. 
 
@@ -183,14 +156,3 @@ An example [from GSA_Toolkit](https://github.com/BHoM/GSA_Toolkit/blob/c5bcd1af4
             };
 ```
 
-### Overriding the Adapter Actions
-
-> **This should be seen as a last resort if the previous logic doesn't do the job for you!**
-
-If you *need to* re-implement one or more of the Adapter Actions for some specific reason, you are always able to do so. 
- 
-That is because all Action methods are [defined as `virtual`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual), so [you can `override` them](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/override).  
-
-This might be needed only in very particular cases. For example, your target software or platform allows only _extremely simple interaction_ (for example, its API is very limited). 
-
-Please make the effort to adhere to the framework we have put in place. It pays off! Reach us out for questions!

@@ -1,5 +1,5 @@
 
-For an user perspective on the UIs, you might be looking for _[Using the BHoM](/Using-the-BHoM)_.
+For an user perspective on the UIs, you might be looking for _[Using the BHoM](../Basics/Using-the-BHoM.md)_.
 
 ## Supported UIs
 
@@ -13,7 +13,7 @@ When dropped on the cavas, most of those components will have no input and no ou
 
 [[/images/GH_ComponentSearchMenu.gif]]
 
-You can get more information on how to use one of the BHoM UI [on this page](Using-the-BHoM).
+You can get more information on how to use one of the BHoM UI [on this page](../Basics/Using-the-BHoM.md).
 
 
 ## Automatic rendering of a `BHoMObject`

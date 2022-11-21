@@ -2,7 +2,7 @@
 
 The BHoM Engine repository contains all the functions and algorithms that process BHoM objects. 
 
-[As we saw earlier](/BH.oM-‐-Define-New-Objects#BHoM-object-functionality-constructors-and-methods), this structure gives us a few advantages, in particular:
+[As we saw earlier](../BHoM_oM/BH.oM-Define-New-Objects.md), this structure gives us a few advantages, in particular:
 * we can see the BHoM object as a list of properties and their default values;
 * in the same way, **the BHoM Engine can be seen as a big collection of functions**.
 
@@ -39,19 +39,19 @@ Those five action names should be the same in all projects; however **it's not m
 
 Each folder contains C# files; those files must be named as the target of this action. 
 
-### Engine actions
+### Engine method types
 
-> **What are those actions? How do I decide the right folder for my files?**  
+In order to sort methods and organise them, 5 different categories of Engine methods exist. All methods will fall into one of these categories.
 
-In most cases, what the actions are (and, consequently, what the folders should contain) should be self-explanatory. However, for an in depth look and for your reference, you can [have a look here](BHoM_Engine-Namespaces).  
-
-> For example, the files contained in the `Create` folder will be responsible for instantiating new objects of a certain type. On the other hand, files in the `Query` folder will be retrieving information, while those in the `Compute` will be calculating things.  
+- Create: methods that instantiate a new object. Remember that the Objects are simple classes defined with no constructor (unless they must be `IImmutable` -- the only exception where constructors are allowed). You can define any number of methods that create the same objects via any combination of input parameters.
+- Modify: methods that modify an object. Generally, the modify method should have a return type that is of the same type of its first argument. This is to state that the method effectively returns a modified copy of the input object.
+- Query: methods that return some derived value from the input object. A derived value is something that is not found among the defining properties of the object, but that can be inferred from them. For example, the length of a Line object, if the Line itself is defined only by its start and end point.
+- Convert: methods that transform the input object into another type that has similar, or equivalent, meaning. For example, converting a BHoM Structural Bar into a Robot Bar.
+- Compute: methods that perform some computational or I/O heavy functionality, or which do not fall into any other of the previous categories.
 
 If you are in doubt, try finding another file that does a similar thing in another project, and see where that is placed.
 
-
 For example, in the Geometry_Engine project there is a `Query` folder that contains, among others, a `Length.cs` file. This file contains methods that take care of Querying the Length for geometric objects. Consider that another equally named `Length.cs` file might be present in the `Query` folder of other Engine projects; this is the case, for example, of the Structure_Engine project, where the file contains method to compute the link of `Bars` (structural objects).
-
 
 
 ## File Structure 

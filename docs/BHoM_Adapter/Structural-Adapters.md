@@ -1,10 +1,12 @@
-## Structural adapters
+# Structural Engineering adapters
 
-This page gives examples and outlines the general common behaviour of the adapters communicating with structural software packages. To get an general introduction to how the adapters are working, please see [this page](The-Adapter-Interface).
+This page gives examples and outlines the general common behaviour of the adapters communicating with structural engineering software. 
 
-If you plan on creating a new adapter to a software not yet supported by any of the current adapters in the organisation, please refer to [this page](BH.Adapter-%E2%80%90-Linking-to-Commercial-Software) for guidance of how to get started.
+To get an general introduction to how the adapters are working, and how to implement a new one please see the set of wiki pages starting from [Introduction to the BHoM Adapter](./index.md).
 
-For information regarding software specific adapter features, known issues and object relation tables, please see the toolkit wikis:
+## Specific Structural Engineering adapters
+
+For information regarding software specific adapter features, known issues and object relation tables, please see their toolkit wikis:
 
 - [Robot_Toolkit wiki](https://github.com/BHoM/Robot_Toolkit/wiki)
 - [GSA_Toolkit wiki](https://github.com/BHoM/GSA_Toolkit/wiki)

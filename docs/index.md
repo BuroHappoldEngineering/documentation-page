@@ -62,13 +62,5 @@ Much of the core code is written in C#. But we also have code in JavaScript, C++
 
 
 
-
-
-![UntitledDiagram1](https://burohappoldengineering.github.io/documentation-page/UntitledDiagram.drawio.svg)
-
-
-![flowcharttest](https://burohappoldengineering.github.io/documentation-page/flowcharttest.drawio)
-
-
 <iframe height="500px" width="100% - 200px"  src="https://service.tib.eu/webvowl/" frameborder="0" allowfullscreen></iframe>
 

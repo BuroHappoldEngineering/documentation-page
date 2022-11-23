@@ -1,4 +1,4 @@
-## Parallel working
+# Coding together avoiding conflicts
 
 Since multiple people may be working on the codebase at the same time please remain aware of other branches on the same repository and keep an eye out for potential conflicts between them, this is especially true of open Pull Requests. If there are changes on parallel branches, and especially ones you know will cause conflicts, there is no substitute to reaching out to the author(s) of those changes and discussing the intent and goals behind yours and theirs and aligning the best way to resolve them. You may find that one of you may be making a change that will actually make the other's goals easier to achieve or even unnecessary and save some work. Someone pausing development may be the best resolution in some cases, in others continuing and dealing with the conflicts later may be, and in others there could be refactoring work that could be done now to save this effort being necessary.
 

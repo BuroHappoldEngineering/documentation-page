@@ -1,6 +1,8 @@
+# What is the BHoM for?
 ## Linking Software
 
 Across our industry, regardless of our discipline, we will generally have to work with multiple softwares during the course of any given project. Since there is rarely a simple solution to transfer the data from one software to another, we usually end up either doing it manually each time or writing some bespoke script to automate the transfer. Things get even more complex when we work across disciplines and with other collaborators. When the number of software to deal with becomes more than just a few, this one to one ad-hoc transfer solution quickly becomes intractable.
+
 
 [[/images/InteropA.png]]
 

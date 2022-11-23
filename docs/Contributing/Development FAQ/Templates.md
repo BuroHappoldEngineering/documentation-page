@@ -2,15 +2,13 @@ Visual studio template files have been set up to help guide and simplify the dev
 
 The currently available templates are:
 
-**Project templates:**
-- [BHoM Adapter Template](https://github.com/BHoM/documentation/blob/master/templates/BHoM%20Adapter%20Template.zip)
+- [Toolkit Template](https://github.com/BHoM/template-repository). You can use this to create a scaffolded Visual Studio solution ready for the development of a Toolkit. It includes an Adapter, an Engine and an oM project templates.
+- [Engine method templates](https://github.com/BHoM/documentation/tree/master/templates/Engine%20method%20templates). They make it faster to to add new Engine methods to an Engine project.
 
-**Item templates:**
-- [Engine method templates](https://github.com/BHoM/documentation/tree/master/templates/Engine%20method%20templates)
+# Toolkit template
+For more guidance on how to use the Toolkit template, please see [Toolkit Template](https://github.com/BHoM/template-repository).
 
-For more guidance on how to use the adapter template, please see [The Adapter](/BH.Adapter-%E2%80%90-Linking-to-Commercial-Software#a-creating-a-new-software-toolkit-with-the-template).
-
-### Adding the templates
+## Engine method templates - add them to Visual Studio
 
 To get visual studio to detect the templates follow these steps:
 
@@ -22,12 +20,6 @@ To get visual studio to detect the templates follow these steps:
 
 When you choose New Project from the visual studio menu all project templates should now show up there and when adding a new item to an existing project should now mean all the item templates should show up.
 
-
-### The Engine Method Templates
-
-For the Engine Method Templates to work in your project, you need to have the following dlls referenced:
-- BHoM
-- Reflection_oM
 
 **Known Issues**
 

@@ -2,7 +2,7 @@
 
 The BHoM Engine repository contains all the functions and algorithms that process BHoM objects. 
 
-[As we saw earlier](../BHoM_oM/BH.oM-Define-New-Objects.md), this structure gives us a few advantages, in particular:
+[As we saw earlier](../BHoM_oM/index.md), this structure gives us a few advantages, in particular:
 * we can see the BHoM object as a list of properties and their default values;
 * in the same way, **the BHoM Engine can be seen as a big collection of functions**.
 

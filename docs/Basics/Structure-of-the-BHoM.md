@@ -2,7 +2,7 @@
 
 When you arrive on Github, what you will see is a fairly long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"** but not all. So what is it about ? How do you find your way among them to what is relevant to you?
 
-[[/images/MainRepoList.png]]
+![img](/img/MainRepoList.png)
 
 Before we discuss in more details what is a repository and what it contains, let's take a step back and look at the different categories of code/functionality we can find inside them.
 
@@ -16,7 +16,7 @@ Manipulators are the bespoke scripts, algorithms, equations, ... that we had to 
 
 The two categories above are called respectively **oM** (stands for object model) and **Engine**. They are all we need to extent our internal computational capability. That being said, we have no intention to reinvent the wheel by replacing external software like Revit, Robot, Tas, IES,... We are also keen to keep using the user interfaces that we already know like Excel, Grasshopper and Dynamo. We are therefore adding two more categories to our central code. **Adapters** to allow the exchange of data between our internal code and external softwares. **UI** plugins to typical programs like Grasshopper and Dynamo that expose all our code directly.
 
-[[/images/BHoM_Anatomy_02a.png]]
+![img](/img/BHoM_Anatomy_02a.png)
 
 In summary, the 4 categories of code, you will find among those repositories are:
 
@@ -48,7 +48,7 @@ Internally, they will all follow the same conventions about the 4 categories of 
 
 Here's what it looks like in a diagram. To be concise, we will refer to this diagram as the diamond in the future.
 
-[[/images/BHoM_Anatomy_01.png]]
+![img](/img/BHoM_Anatomy_01.png)
 
 Be aware that most of the toolkits will not implement all four categories. Let's look at a few user cases:
 
@@ -69,26 +69,14 @@ So, what about the few repositories that don't end with **_Toolkit** then? Under
 
 Note that, while toolkits will always depend on the core, the core should never depend on a toolkit. The toolkits are also fairly independent sets of code so there should be very few dependencies between them.
 
-[[/images/ToolkitsVsCore.png]]
-
-## Namespaces 
-
-For those coding in C#, you will see that the namespaces are matching the 4 categories of code introduced above. All curated code produced by the collective will be in the namespace _**BH**_. Regardless of whether the code is written in a toolkit or in one of the base repos, the classes are defined inside one of the following namespaces:
-
-        1. BH.oM
-
-        2. BH.Engine
-
-        3. BH.Adapter
-
-        4. BH.UI
+![img](/img/ToolkitsVsCore.png)
 
 
 ## Further Reading
 
 Now that you have a global view of the way the code and the repositories are organised, you might wonder how that translate into you actually writing code either on the core or on a toolkit. Here's where you can find more details on the way each category of code is structured and the conventions you need to follow:
 
-* [BH.oM: Organise your Design Data](BH.oM-‐-Define-New-Objects)
-* [BH.Engine: Create New Algorithms](BH.Engine-‐-Create-New-Algorithms)
-* [BH.UI: Expose your Code to UIs](BH.UI-‐-Expose-Your-Code-to-UIs)
-* [BH.Adapter: Linking to Commercial Software](BH.Adapter-‐-Linking-to-Commercial-Software) 
+* [BH.oM: Organise your Design Data](../BHoM_oM/index.md)
+* [BH.Engine: Create New Algorithms](../BHoM_Engine/index.md)
+* [BH.UI: Expose your Code to UIs](../BHoM_UI/index.md)
+* [BH.Adapter: Linking to Commercial Software](../BHoM_Adapter/index.md)

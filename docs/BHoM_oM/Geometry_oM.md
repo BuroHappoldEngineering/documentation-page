@@ -18,7 +18,7 @@ The code is divided into a few thematic domains, each stored in a separate folde
 -	Vector
 
 All classes belong to one namespace (`BH.oM.Geometry`) with one exception of Coordinate Systems, which live under `BH.oM.Geometry.CoordinateSystem`. 
-All methods referring to the geometry belong to `BH.Engine.Geometry` namespace, which is a part of the [BHoM_Engine](/BHoM_Engine-Namespaces).
+All methods referring to the geometry belong to `BH.Engine.Geometry` namespace.
  
 ## Interfaces
 Two separate families of interfaces coexist in Geometry_oM. First of them organizes the classes within the namespace:

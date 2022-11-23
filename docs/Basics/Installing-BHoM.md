@@ -1,8 +1,8 @@
 # Installing BHoM
-We recommend using the BHoM Installer for most typical situations. The latest versions of which can always be grabbed from https://bhom.xyz/
+We recommend using the BHoM Installer for most situations. 
 
-Contributors, as well as those who need a special version of a toolkit, may need to compile the source code themselves. If this is you then follow link below
+The latest versions of which can always be grabbed from https://bhom.xyz/.
 
-## Developers welcome! 🚀 
+Make sure all instances of Rhino, Excel and Revit are closed when installing BHoM.
 
-Code contributors are always more than welcome! Have a look at [Getting started for developers](/Getting-started-for-developers).
+Contributors, as well as those who need a special version of a toolkit, may need to compile the source code themselves. Have a look at [Getting started for developers](../Contributing/Getting-started-for-developers.md).

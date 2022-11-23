@@ -47,38 +47,11 @@ Much of the core code is written in C#. But we also have code in JavaScript, C++
 
 ## Contribute
 
-* [BH.oM: Organise your Design Data](BH.oM-‐-Define-New-Objects)
-* [BH.Engine: Create New Algorithms](BH.Engine-‐-Create-New-Algorithms)
-* [BH.Adapter: Connecting to external software](/Introduction-to-the-BHoM_Adapter)
-* [BH.UI: Expose your Code to UIs](BH.UI-‐-Expose-Your-Code-to-UIs)
-* [The Tests: Raise Confidence in the Code](BHoM_Test:-Raise-Confidence-in-the-Code) _(coming soon)_
+* [BH.oM: Organise your Design Data](BHoM_oM/index.md)
+* [BH.Engine: Create New Algorithms](BHoM_Engine/index.md)
+* [BH.Adapter: Connecting to external software](BHoM_Adapter/index.md)
+* [BH.UI: Expose your Code to UIs](BHoM_UI/index.md)
 
-## Guidelines
-
-* [Unit convention](BHoM-Units-conventions)   
-* [Geometry](Geometry)   
-* [BHoM_Engine Classes](BHoM_Engine-Classes)   
-* [The IImmutable Interface](The-IImmutable-interface)  
-* [Handling Exceptional Events](Handling-Exceptional-Events)   
-* [BHoM Structural Conventions](BHoM-Structural-Conventions)   
-* [Code Versioning](Versioning---How-to-modify-code-without-breaking-user-scripts)   
-* [Wiki Style](Wiki-Style)      
-* [Coding Style](Coding-Style)   
-* [Code Attributes](/Code-Attributes)   
-* [Creating Icons](Icons)                    
-* [Changelog](Changelog)  
-* [Releases and Versioning](/Releases-and-Versioning)
-
-## Continuous Integration
-   
-* [Introduction](Continuous-Integration)  
-* [Check-PR-Builds](Check-PR-Builds)          
-* [Check-Core](Check-Core)  
-* [Check-Installer](Check-Installer)
-  
-## Code Compliance
-
-* [Compliance](Code-Compliance)
 
 ## Further Reading 
   

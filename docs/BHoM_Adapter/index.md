@@ -3,8 +3,6 @@
 
 ___________________________________________________________________
 
-<br/>
-
 > ### Note
 > Before reading this page, have a look at the following pages:
 > - [Structure of the BHoM framework](/BHoM_Adapter/Structure-of-the-BHoM)
@@ -18,31 +16,11 @@ ___________________________________________________________________
 
 In this page you will find a first overview about **what is the BHoM Adapter**.
 
-<br/>
-
 ___________________________________________________________________
 
-<br/>
 
-<!-- Start Document Outline -->
-## Contents
-* [What is the Adapter?](#what-is-the-adapter)
-* [Adapter Actions](#adapter-actions)
-   * [Adapter Actions overview](#adapter-actions-overview)
-   * [Adapter Actions - advanced parameters](#adapter-actions-advanced-parameters)
-* [Wrap up](#wrap-up)
-* [If you are a developer](#if-you-are-a-developer-)
-
-<!-- End Document Outline -->
-
-<br/>
-
-___________________________________________________________________
-
-<br/>
-
-## What is the Adapter?
-As shown in the [Structure of the BHoM framework](/BHoM_Adapter/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
+## What is a BHoM Adapter?
+As shown in the [Structure of the BHoM framework](../1.%20Basics/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
 
 The [BHoM_Adapter](https://github.com/BHoM/BHoM_Adapter) is one of the base repositories, with one main Project called `BHoM_Adapter`. That one is the **base** BHoM_Adapter (developers: it's an `abstract` class).
 

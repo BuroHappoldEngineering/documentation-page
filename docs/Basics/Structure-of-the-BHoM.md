@@ -1,6 +1,6 @@
 ## Introduction
 
-When you arrive on Github, what you will see is a fairly long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"** but not all. So what is it about ? How do you find your way among them to what is relevant to you?
+When you arrive on Github, what you will see is a fairly long list of things called Repositories. Most of them will have a name finishing with **"_Toolkit"**. Foundational repositories are instead called `BHoM`, `BHoM_Engine`, `BHoM_Adapter`, `BHoM_UI`, among others.
 
 ![img](/img/MainRepoList.png)
 
@@ -8,9 +8,9 @@ Before we discuss in more details what is a repository and what it contains, let
 
 ## The 4 categories of code
 
-If you ever have created your own tool or script, you must must have been exposed to the two dual aspects of computation: data and manipulators. In excel, data would be the value of your cells and manipulators would be the formulas or VB scripts. In Grasshopper and Dynamo, the manipulators are the components and the data is the content of the wires.
+If you ever have created your own tool or script, you must must have been exposed to the two dual aspects of computation: _data_ and _functionality_. In excel, data would be the value of your cells and functionality would be the formulas or VB scripts. In Grasshopper and Dynamo, the functionality is made by the components, and the data is stored within parameters.
 
-Data is generally packaged into meaningful entities. For example, Grasshopper and Dynamo already provide definitions for most geometrical objects. There are however a lot of objects that we manipulate regularly as engineers that are not defined out of the box in any of those programs. So our first category of code will focus on that: providing a list of properties that fully define each type of object we use. For example, we can all agree that a point would have three properties (X,Y, and Z) each representing to position of the point along one axis. This applies similarly to agree on the definitions of elements such as walls, spaces, speakers,...
+Data is generally representing specific _concepts_. For example, Grasshopper and Dynamo provide definitions for Points, Lines, etc., which are geometrical concepts. There are however a lot of objects that we manipulate regularly as engineers that are not defined out of the box in any of those programs. So our first category of code will focus on that: providing a list of properties that fully define each type of object we use. For example, we can all agree that a point would have three properties (X,Y, and Z) each representing to position of the point along one axis. This applies similarly to agree on the definitions of elements such as walls, spaces, speakers,...
 
 Manipulators are the bespoke scripts, algorithms, equations, ... that we had to write ourselves to provide calculations not readily available. As engineers we have all had some of those custom made solutions lying around on our computer. Here we simply provide a central place to collect and store them in an organised way so we can all benefit from it.
 

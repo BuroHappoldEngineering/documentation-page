@@ -221,7 +221,7 @@ Apart from the use of `{ get; }` instead of `{ get; set; }`, you will notice tha
 
 It is convenient for some objects to be able to be casted from something else. For Example, a geometrical Point could be casted from a Vector or a structural Node could be casted from a Point. This is especially useful inside a user interface. Here's an example where this case is relevant:
 
-[[/images/ExplicitCastingInUI.png]]
+![img](../img/ExplicitCastingInUI.png)
 
 ```c#
 public class Node : BHoMObject

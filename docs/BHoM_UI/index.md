@@ -8,11 +8,11 @@ The UI layer has been designed so that it will automatically pick everything imp
 
 Here's what the menu looks like in Grasshopper. The number of component there doesn't have to change when more functionality is added to the rest of the code:
 
-[[/images/GH_Menu.png]]
+![img](../img/GH_Menu.png)
 
 When dropped on the cavas, most of those components will have no input and no output. They will be converted to their final form once you have selected what they need to be in their menu:
 
-[[/images/GH_ComponentSearchMenu.gif]]
+![img](../img/GH_ComponentSearchMenu.gif)
 
 You can get more information on how to use one of the BHoM UI [on this page](../Basics/Using-the-BHoM.md).
 

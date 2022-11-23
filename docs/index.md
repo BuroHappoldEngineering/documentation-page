@@ -1,6 +1,6 @@
 # Welcome to BHoM Wiki!
 
-![image](https://github.com/BHoM/documentation/raw/master/wiki/images/logos/BHoM_Logo.png)
+![image](img/logos/BHoM_Logo.png)
 
 
 ## So - what exactly is the BHoM?

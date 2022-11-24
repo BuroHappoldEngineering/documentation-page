@@ -2,7 +2,6 @@
 
 ![image](https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/logos/BHoM_Logo.png)
 
-test
 
 ## So - what exactly is the BHoM?
 

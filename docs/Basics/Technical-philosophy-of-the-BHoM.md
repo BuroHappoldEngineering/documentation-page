@@ -1,9 +1,4 @@
-
-<br/>	
-<br/>	
-
-## Technical philosophy of the BHoM 
-
+# Technical philosophy of the BHoM 
 
 The Buildings and Habitats object Model [BHoM] has been designed as a hybrid model for code architecture - integrating a number of concepts from across existing languages/platforms. 
 _Think of your favourite aspects of GH, C# and MongoDB combined._

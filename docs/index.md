@@ -1,6 +1,6 @@
 # Welcome to the BHoM documentation!
 
-![image](images/logos/BHoM_Logo.png)
+![image](/_images/logos/BHoM_Logo.png)
 
 
 ## So - what exactly is the BHoM?

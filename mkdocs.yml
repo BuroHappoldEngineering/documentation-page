@@ -16,8 +16,10 @@ plugins:
   - awesome-pages #allows to customise the ordering of pages
 
 markdown_extensions:
-  # Wider support to markdown symbols
-  - pymdownx.betterem
+  - attr_list # allows to add HTML/CSS attributes to almost every Markdown element, useful for e.g. aligning an image to the left/right (can't do centre though! use md_in_html instead)
+  - md_in_html # allows to add markdown within HTML elements, useful for e.g. adding image captions or centering an image
+  
+  - pymdownx.betterem # Wider support to markdown symbols
   
   # Code syntax highlighting
   - pymdownx.highlight:

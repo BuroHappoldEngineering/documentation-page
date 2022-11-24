@@ -10,6 +10,7 @@ theme:
 
   features:
     - navigation.tracking
+    - navigation.top
 
 plugins:
   - search
@@ -31,6 +32,11 @@ markdown_extensions:
   # Mathjax support
   - pymdownx.arithmatex:
       generic: true
+
+  # Call-outs and note boxes ('admonition')
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 extra_javascript: 
   # Also required for Mathjax support

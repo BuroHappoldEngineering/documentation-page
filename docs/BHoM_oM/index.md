@@ -163,7 +163,11 @@ The main disadvantage is that the hierarchical structure of the repositories mak
 - The inter-disciplinary representation is expressed through physical objects (stored in the **_Physical_** folder).
 - Finally, the _**BHoM**_ and _**Geometry**_ folders contain core objects and geometry definitions respectively. 
 
-![](https://user-images.githubusercontent.com/16853390/50328126-df9fc300-052c-11e9-8798-b2526a8b3fc8.png)
+
+<figure markdown>
+  ![](https://user-images.githubusercontent.com/16853390/50328126-df9fc300-052c-11e9-8798-b2526a8b3fc8.png)
+  <figcaption>Example view of the BHoM solution</figcaption>
+</figure>
 
 Namespaces have to match the folder structure. 
 

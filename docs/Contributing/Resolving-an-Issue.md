@@ -96,11 +96,11 @@ Make sure to check [this
 page](Working-Together-‐-Avoiding-Conflicts)
 for the guidelines on when to create a branch and when not to.
 
-![img](/img/Issues_NewBranch1.png)
+![img](/images/Issues_NewBranch1.png)
 
 You should see that your repo history has now switched to a new branch.
 
-![img](/img/Issues_NewBranch2.png)
+![img](/images/Issues_NewBranch2.png)
 
 From there you are ready to work on your code. Any commit that you will do,
   will be on that new branch.

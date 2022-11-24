@@ -1,9 +1,10 @@
 site_name: BHoM documentation
+copyright: Copyright &copy; 2018 - 2022 BHoM
 
 theme:
   name: material
   logo: _images/logos/logo.png
-  favicon: _images/logos/logo.png
+  favicon: _images/logos/favicon.ico
   palette:
     primary: white
     accent: pink

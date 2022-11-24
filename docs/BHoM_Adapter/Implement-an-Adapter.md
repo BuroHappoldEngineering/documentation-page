@@ -10,8 +10,8 @@ ___________________________________________________________________
 > ## ⚠️ Note ⚠️
 > Before reading this page, please check out:
 > - [Getting started for developers](/Contributing/Getting-started-for-developers.md)
-> - [Introduction to BHoM_Adapter](.)
-> - [Adapter Actions](./Adapter-Actions.md)
+> - [Introduction to BHoM_Adapter](/BHoM_Adapter)
+> - [Adapter Actions](/BHoM_Adapter/Adapter-Actions.md)
 > - [The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)
 
 

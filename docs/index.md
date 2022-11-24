@@ -1,4 +1,4 @@
-# Welcome to BHoM Wiki!
+# Welcome to the BHoM documentation!
 
 ![image](img/logos/BHoM_Logo.png)
 

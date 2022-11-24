@@ -7,3 +7,6 @@ theme:
   palette:
     primary: white
     accent: pink
+
+  features:
+    - navigation.tracking

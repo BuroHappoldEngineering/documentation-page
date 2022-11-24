@@ -2,7 +2,7 @@
 
 ◀️ Previous read: _[introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter)_
 
-▶️ Next read: _[The BHoM Toolkit](../Basics/The-BHoM-Toolkit.md)_ and _[The BHoM Toolkit](/BHoM_Adapter/The-CRUD-methods.md)._
+▶️ Next read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)_ and _[The BHoM Toolkit](/BHoM_Adapter/The-CRUD-methods.md)._
 
 ___________________________________________________________________
 
@@ -15,40 +15,17 @@ ___________________________________________________________________
 
 After covering the basics in [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
 
-After reading this you should be all set to develop your own [BHoM Toolkit](/BHoM_Adapter/The-BHoM-Toolkit) 🚀 
+After reading this you should be all set to develop your own [BHoM Toolkit](/Basics/The-BHoM-Toolkit.md) 🚀 
 
 <br/>
 
 ___________________________________________________________________
 
-<br/>
 
-## Contents
-<!-- Start Document Outline -->
-
-* [How the Adapter Actions work](#how-the-adapter-actions-work)
-	* [The CRUD paradigm](#the-crud-paradigm)
-	* [CRUD methods in depth](#CRUD-methods-details-and-implementation)
-* [Optional read: adapter actions complete description](#adapter-actions-complete-description)
-	* [Push](#push)
-	* [Pull](#pull)
-	* [Move](#move)
-	* [Remove](#remove)
-	* [Execute](#execute)
-* [Next step: create your own Adapter](#next-steps-create-your-own-adapter)
-
-<!-- End Document Outline -->
-
-<br/>
-
-___________________________________________________________________
-
-<br/>
-
-# How the Adapter Actions work
+## How the Adapter Actions work
 As we've said before, the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
 
-## The CRUD paradigm
+### The CRUD paradigm
 A very common **paradigm** that describes **all the possible action types** is [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). This paradigm says that, regardless of the connection being made, the connector actions can be always categorised as:
 * **C**reate = add new entries
 * **R**ead = retrieve, search, or view existing entries
@@ -104,12 +81,11 @@ You may now want to jump to [our guide to build a **BHoM Toolkit**](/BHoM_Adapte
 
 Otherwise, keep reading.
 
-# Advanced topic - optional read
-## Adapter actions: complete description
+# Advanced topic (optional) - Adapter actions: complete description
 
 We can now fully understand the Adapter Actions, complete of their relationships with their backing CRUD methods.
 
-### Push
+## Push
 
 The Push action is defined as follows:
 ```c#
@@ -135,10 +111,10 @@ During the Push, the two sets of objects being compared are the objects _current
 
 This is the reason why **the first `CRUD` method that the Push will attempt to invoke is `Read`**. The Push is an _export_, but you need to check what objects _exist_ in the external model first if you want do decide _what_ and _how_ to export.
 
-> #### Additional note: custom Comparers
+> ### Additional note: custom Comparers
 > Once the `existingObjects` are at hand, it's easy to compare them with the `objectsToPush` through the Venn Diagram. Even if no specific comparer for the object has been written, the base C# IEqualityComparer will suffice to tell the two apart. If you want to have some specific way of comparing two objects (for example, if you think that two overlapping columns should be deemed the same no matter what their `Name` property is), then you should define specific comparer for that type. You can see how to do that in the next page dedicated to the BHoM_Toolkit.
 
-#### A practical example
+### A practical example
 
 Now, let's think that we are pushing two columns: column `A_new` and column `B_new`; **and** that the external model has already two columns somewhere, column `B_old` and column `C_old`. `B_new` and `B_old` are located in the same position in the model space, they have all the same properties except the Name property.
 
@@ -148,10 +124,10 @@ First, the external model is read. The existingObjects list now includes the two
 
 Then a VennDiagram is invoked to compare the existingObjects with the objectsToPush (which are the two pushed columns `A_new` and `B_new`).
 
-##### 1) The object being pushed is new. 
+#### 1) The object being pushed is new. 
 There is no existing object in the external model that corresponds to one of the columns being pushed. Easy peasy: Push will call `Create` this column for this category of objects. `A_new` is `Create`d.
 
-##### 2) The object being pushed is deemed the same of one in the external model.
+#### 2) The object being pushed is deemed the same of one in the external model.
 What does "deemed the same" means?
 
 It means that the `Comparer` has evaluated them to be the same. This does not exclude that there might be some property of the objects that the Comparer is deliberately skipping to compare. 
@@ -166,7 +142,7 @@ But then, we need to update the Name property of the column in the external mode
 Hence, we call `Update` for this category of objects.  
 `B_new` is passed to the `Update` method.
 
-##### 3) Remaining existing objects that are not among the objects being pushed.
+#### 3) Remaining existing objects that are not among the objects being pushed.
 What to do with this category of objects? What to do with `C_old`? 
 
 An easy answer would be "let's `Delete` 'em!", probably. However, if we simply did that, then we would force the user to always input, in the objectsToPush, also all the objects that _do not need to be Deleted_. 
@@ -179,7 +155,7 @@ We assume that if the User wants the `Delete` method to be called for this categ
 Let's imagine that our column `C_old` was originally pushed with the attached tag "basementColumns".
 If I'm currently pushing columns with the same tag "basementColumns", it means that I'm pushing the whole set of columns that should exist in the basement. Therefore, `C_old` is `Delete`d.
 
-###### _Overlapping_ objects with multiple tags
+#### _Overlapping_ objects with multiple tags
 
 Let's say that I push a set of columns with the tag "basementColumns". Everything that those bars need to be fully defined – what we call the Dependant Objects, e.g. the bar end nodes (points), the bar section property, the bar material, etc. – will be pushed together with it, and **with the same tag attached**. 
 
@@ -215,7 +191,7 @@ This is really an advanced read that you might need only if you want to get into
 <img src="https://user-images.githubusercontent.com/6352844/74760173-ea113600-5271-11ea-90c6-7e4f8302b79e.png">
 </a>
 
-### Pull
+## Pull
 
 The Pull action is defined as follows:
 ```c#
@@ -233,7 +209,7 @@ You can find more info on Requests in their related section of the [Adapter Acti
 Note that the method returns a list of `object`, because the pulled objects must not necessarily be limited to BHoM objects (you can import any other class/type, also from different Object Models).
 
 
-### Move
+## Move
 
 Move performs a Pull and then a Push. 
 
@@ -246,7 +222,7 @@ It's greatly helpful in converting a model from a software to another without ha
 
 
 
-### Remove
+## Remove
 
 The Remove action is defined as follows:
 ```c#
@@ -263,7 +239,7 @@ The method returns the number of elements that have been removed from the extern
 
 
 
-### Execute
+## Execute
 
 The Execute is defined as follows:
 

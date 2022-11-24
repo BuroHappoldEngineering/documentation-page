@@ -1,3 +1,5 @@
+# BHoM coding templates
+
 Visual studio template files have been set up to help guide and simplify the development process of the BHoM.
 
 The currently available templates are:
@@ -5,7 +7,7 @@ The currently available templates are:
 - [Toolkit Template](https://github.com/BHoM/template-repository). You can use this to create a scaffolded Visual Studio solution ready for the development of a Toolkit. It includes an Adapter, an Engine and an oM project templates.
 - [Engine method templates](https://github.com/BHoM/documentation/tree/master/templates/Engine%20method%20templates). They make it faster to to add new Engine methods to an Engine project.
 
-# Toolkit template
+## Toolkit template
 For more guidance on how to use the Toolkit template, please see [Toolkit Template](https://github.com/BHoM/template-repository).
 
 ## Engine method templates - add them to Visual Studio

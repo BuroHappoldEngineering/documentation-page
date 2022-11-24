@@ -2,8 +2,8 @@ site_name: BHoM documentation
 
 theme:
   name: material
-  logo: img/logos/logo.png
-  favicon: img/logos/logo.png
+  logo: _images/logos/logo.png
+  favicon: _images/logos/logo.png
   palette:
     primary: white
     accent: pink

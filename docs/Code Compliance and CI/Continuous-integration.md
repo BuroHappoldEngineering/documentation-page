@@ -1,4 +1,4 @@
-# Continuous Integration
+# Continuous Integration (CI)
 
 Continuous Integration (CI) is the name given to the process of assisting our PR checks and resolving uncertainty in code status.
 

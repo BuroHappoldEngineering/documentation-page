@@ -1,6 +1,7 @@
 # What is a BHoM Toolkit?
 
 A Toolkit is set of tools that can contain one or more of the following:
+
 - A [BHoM_Adapter](/BHoM_Adapter) project, that allows to implement the connection with an external software.
 - A [BHoM_Engine](/BHoM_Engine) project, that should contain the Engine methods specific to your Toolkit.
 - A [BHoM_oM](/BHoM_oM) project, that should contain any oM class (the types, or the _schema_) specific to your Toolkit.

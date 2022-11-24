@@ -7,6 +7,10 @@ If you want to add a page, just add an new markdown document. You also can embed
 - HTML blocks
 - Latex/Mathjax, e.g. $f(x) = x^2$ (enclose the formula between single `$` for inline and double `$$` for block).
 
+### Using a text editor to edit the documentation
+
+We recommend using either Visual Studio Code or Markdown Monster to edit the documentation. With Visual Studio Code, open the folder `docs` (not the root of the repository). This way, [when previewing the markdown](https://code.visualstudio.com/docs/languages/markdown#_dynamic-previews-and-preview-locking), images will appear correctly.
+
 
 ## Customising the ordering of the pages in the menu
 

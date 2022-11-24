@@ -1,4 +1,4 @@
-◀️ Previous read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ and _[Adapter Actions](./Adapter-Actions.md)_
+◀️ Previous read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ and _[Adapter Actions](./Adapter-Actions)_
 
 ___________________________________________________________________
 

@@ -5,7 +5,7 @@ The change log is made by aggregating the notes from Pull Requests for each repo
 
 ## Pull requests
 
-To simplify the managing of the changelog it is best practice to note what has changed at the time of a pull request. The change log will be generated from the title and body of the pull request using the [PULL_REQUEST_TEMPLATE.md](https://github.com/BHoM/BHoM/blob/master/docs/PULL_REQUEST_TEMPLATE.md).
+To simplify the managing of the changelog it is best practice to note what has changed at the time of a pull request. The change log will be generated from the title and body of the pull request using the [PULL_REQUEST_TEMPLATE](https://github.com/BHoM/BHoM/blob/master/docs/PULL_REQUEST_TEMPLATE).
 
 The Pull Request Title should state, in a simple sentence, what the Pull Request is changing. For toolkits, this should not include the toolkit title, however, for multi-project repositories it should. For example:
 
@@ -26,6 +26,6 @@ For example:
 - `Query.Tangent()` Query method added in the `Structure_Engine` for `Bar` class
 ```
 
-The entries made here will be mined for the next release and added to the changelog.md in one go.
+The entries made here will be mined for the next release and added to the changelog in one go.
 
 Pull requests must also have a label defining their `type` - either feature, bug fix, test script, documentation, compliance, or other approved type of pull request. This is to aid categorisation of pull requests for the change log. Where a pull request might span multiple types (for example, a pull request adding a new feature and fixing a bug in the same work), then multiple type labels may be applied.

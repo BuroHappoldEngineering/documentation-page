@@ -1,6 +1,6 @@
 # Implement an Adapter 
 
-◀️ Previous read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)_
+◀️ Previous read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_
 
 ▶️ Next read: _[The CRUD methods](./The-CRUD-methods)_
 
@@ -9,10 +9,10 @@ ___________________________________________________________________
 
 > ## ⚠️ Note ⚠️
 > Before reading this page, please check out:
-> - [Getting started for developers](/Contributing/Getting-started-for-developers.md)
+> - [Getting started for developers](/Contributing/Getting-started-for-developers)
 > - [Introduction to BHoM_Adapter](/BHoM_Adapter)
-> - [Adapter Actions](/BHoM_Adapter/Adapter-Actions.md)
-> - [The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)
+> - [Adapter Actions](/BHoM_Adapter/Adapter-Actions)
+> - [The BHoM Toolkit](/Basics/The-BHoM-Toolkit)
 
 
 ___________________________________________________________________
@@ -21,7 +21,7 @@ ___________________________________________________________________
 
 ## The Toolkit containing the adapter
 
-See the page dedicated to the _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)_ to learn how to set up a Toolkit, which can then contain an Adapter.
+See the page dedicated to the _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ to learn how to set up a Toolkit, which can then contain an Adapter.
 
 
 ## Main Adapter file and constructor

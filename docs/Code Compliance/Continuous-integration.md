@@ -33,4 +33,4 @@ The pages within this section detail the CI checks we currently have operating, 
 
 ***
 
-<sup>1</sup> See more notes on our approach to using and interacting with bots and automated processes as part of our [Code of Conducts](/ci/https://github.com/BHoM/BHoM/blob/master/docs/CODE_OF_CONDUCT_FOR_BOTS.md).
+<sup>1</sup> See more notes on our approach to using and interacting with bots and automated processes as part of our [Code of Conducts](/ci/https://github.com/BHoM/BHoM/blob/master/docs/CODE_OF_CONDUCT_FOR_BOTS).

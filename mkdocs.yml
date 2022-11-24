@@ -12,4 +12,5 @@ theme:
     - navigation.tracking
 
 plugins:
+  - search
   - awesome-pages

@@ -5,7 +5,7 @@ ___________________________________________________________________
 <br/>
 
 > ### Note
-> This page can be seen as an Appendix to the pages [Adapter Actions](./Adapter-Actions) and [The BHoM Toolkit](../Basics/The-BHoM-Toolkit).
+> This page can be seen as an Appendix to the pages [Adapter Actions](./Adapter-Actions) and [The BHoM Toolkit](/Basics/The-BHoM-Toolkit).
 
 
 As we have seen, the CRUD methods are the support methods for the Adapter Actions. They are the methods that have to be implemented in the specific Toolkits and that differentiate one Toolkit from another.
@@ -35,21 +35,21 @@ If no API calls are necessary to convert the objects, the best practice is to do
 
 If API calls are required for the conversion, it's best to include the conversion process directly in the Create method. See [Robot_Toolkit](https://github.com/BHoM/Robot_Toolkit) for an example of this.
 
-In the [Toolkit template](../Basics/The-BHoM-Toolkit), you will find some methods to get you started for creating `BH.oM.Structure.Element.Bar` objects.
+In the [Toolkit template](/Basics/The-BHoM-Toolkit), you will find some methods to get you started for creating `BH.oM.Structure.Element.Bar` objects.
 
 
 ### AssignNextFreeId
 
 This is a method for returning a free index that can be used in the creation process. 
 
-Important method to implement to get pushing of dependant properties working correctly. Some more info given in the [Toolkit template](../Basics/The-BHoM-Toolkit/). 
+Important method to implement to get pushing of dependant properties working correctly. Some more info given in the [Toolkit template](/Basics/The-BHoM-Toolkit/). 
 
 
 
 # Read
 The read method is responsible for reading the external model and returning all objects that respect some rule (or, simply, all of them).
 
-There are many available overloads for the Read. You should assume that any of them can be [called "when appropriate" by the Push and Pull adapter actions](../Adapter-Actions/).
+There are many available overloads for the Read. You should assume that any of them can be [called "when appropriate" by the Push and Pull adapter actions](/Adapter-Actions/).
 
 ## The Read method in practice
 The Read method scope should in general be specular to the Create:

@@ -76,7 +76,7 @@ Note that, while toolkits will always depend on the core, the core should never 
 
 Now that you have a global view of the way the code and the repositories are organised, you might wonder how that translate into you actually writing code either on the core or on a toolkit. Here's where you can find more details on the way each category of code is structured and the conventions you need to follow:
 
-* [BH.oM: Organise your Design Data](../BHoM_oM/index.md)
-* [BH.Engine: Create New Algorithms](../BHoM_Engine/index.md)
-* [BH.UI: Expose your Code to UIs](../BHoM_UI/index.md)
-* [BH.Adapter: Linking to Commercial Software](../BHoM_Adapter/index.md)
+* [BH.oM: Organise your Design Data](/BHoM_oM)
+* [BH.Engine: Create New Algorithms](/BHoM_Engine)
+* [BH.UI: Expose your Code to UIs](/BHoM_UI)
+* [BH.Adapter: Linking to Commercial Software](/BHoM_Adapter)

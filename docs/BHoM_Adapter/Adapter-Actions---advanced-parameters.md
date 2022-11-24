@@ -1,9 +1,9 @@
 # Adapter Actions: advanced parameters 
 
 > ### Note
-> This page can be seen as an Appendix to the pages [Introduction to BHoM_Adapter](./index.md) and [Adapter Actions](./Adapter-Actions.md).
+> This page can be seen as an Appendix to the pages [Introduction to BHoM_Adapter](.) and [Adapter Actions](./Adapter-Actions.md).
 
-The Adapter Actions have some particular input parameters that have not been covered in the [introduction to the BHoM_Adapter](./index.md). These are:
+The Adapter Actions have some particular input parameters that have not been covered in the [introduction to the BHoM_Adapter](.). These are:
 
 - the **ActionConfig** (used by all Actions: Push, Pull, Move, Remove, Execute);
 - the **Requests** (used by the Pull)

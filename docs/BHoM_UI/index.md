@@ -1,6 +1,6 @@
 # BH.UI: Expose your code to User Interfaces
 
-For an user perspective on the UIs, you might be looking for _[Using the BHoM](../Basics/Using-the-BHoM.md)_.
+For an user perspective on the UIs, you might be looking for _[Using the BHoM](/Basics/Using-the-BHoM.md)_.
 
 ## Supported UIs
 
@@ -14,7 +14,7 @@ When dropped on the cavas, most of those components will have no input and no ou
 
 ![img](/img/GH_ComponentSearchMenu.gif)
 
-You can get more information on how to use one of the BHoM UI [on this page](../Basics/Using-the-BHoM.md).
+You can get more information on how to use one of the BHoM UI [on this page](/Basics/Using-the-BHoM.md).
 
 
 ## Automatic rendering of a `BHoMObject`

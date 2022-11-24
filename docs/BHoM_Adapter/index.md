@@ -20,7 +20,7 @@ ___________________________________________________________________
 
 
 ## What is a BHoM Adapter?
-As shown in the [Structure of the BHoM framework](../1.%20Basics/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
+As shown in the [Structure of the BHoM framework](/1.%20Basics/Structure-of-the-BHoM), an adapter is the piece of code responsible to actuate the connection (import/export) between different software packages.
 
 The [BHoM_Adapter](https://github.com/BHoM/BHoM_Adapter) is one of the base repositories, with one main Project called `BHoM_Adapter`. That one is the **base** BHoM_Adapter (developers: it's an `abstract` class).
 

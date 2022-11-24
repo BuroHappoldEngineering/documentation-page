@@ -1,0 +1,3080 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../_images/logos/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Versioning BHoM objects and methods - BHoM documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#versioning-bhom-objects-and-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BHoM documentation" class="md-header__button md-logo" aria-label="BHoM documentation" data-md-component="logo">
+      
+  <img src="../_images/logos/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BHoM documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Versioning BHoM objects and methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BHoM documentation" class="md-nav__button md-logo" aria-label="BHoM documentation" data-md-component="logo">
+      
+  <img src="../_images/logos/logo.png" alt="logo">
+
+    </a>
+    BHoM documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to the BHoM documentation!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/" class="md-nav__link">
+        What is the BHoM for?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/Installing-BHoM/" class="md-nav__link">
+        Installing BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/Structure-of-the-BHoM/" class="md-nav__link">
+        Structure of the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/Technical-philosophy-of-the-BHoM/" class="md-nav__link">
+        Technical philosophy of the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/The-BHoM-Toolkit/" class="md-nav__link">
+        What is a BHoM Toolkit?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basics/Using-the-BHoM/" class="md-nav__link">
+        Using the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          BHoM oM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM oM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM oM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_oM/" class="md-nav__link">
+        The Object Model (oM): define new objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_oM/Geometry_oM/" class="md-nav__link">
+        Geometry_oM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          BHoM Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Engine/" class="md-nav__link">
+        What is the BHoM Engine?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Engine/BHoM_Engine-Classes/" class="md-nav__link">
+        BHoM Engine Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          BHoM Adapter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM Adapter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM Adapter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/" class="md-nav__link">
+        Introduction to the BHoM_Adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/Adapter-Actions---advanced-parameters/" class="md-nav__link">
+        Adapter Actions: advanced parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/Adapter-Actions/" class="md-nav__link">
+        Adapter actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/Implement-an-Adapter/" class="md-nav__link">
+        Implement an Adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/Structural-Adapters/" class="md-nav__link">
+        Structural Engineering adapters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_Adapter/The-CRUD-methods/" class="md-nav__link">
+        The CRUD methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          BHoM UI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM UI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BHoM_UI/" class="md-nav__link">
+        BH.UI: Expose your code to User Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Creating-a-New-Repo/" class="md-nav__link">
+        Creating a New Repo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Editing-the-documentation/" class="md-nav__link">
+        Editing the documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Getting-started-for-developers/" class="md-nav__link">
+        Getting started for developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Icons/" class="md-nav__link">
+        Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Open-Sourcing-Procedure/" class="md-nav__link">
+        Open Sourcing Procedure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Resolving-an-Issue/" class="md-nav__link">
+        Resolving an Issue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Submitting-an-Issue/" class="md-nav__link">
+        Submitting an Issue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Using-the-SCRUM-Board/" class="md-nav__link">
+        Using the SCRUM Board
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          Development FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Development FAQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Code-Attributes/" class="md-nav__link">
+        Code Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Coding-Style/" class="md-nav__link">
+        Coding Style
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Coding-together-avoiding-conflicts/" class="md-nav__link">
+        Coding together avoiding conflicts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Handling-Exceptional-Events/" class="md-nav__link">
+        Handling Exceptional Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/IElement-required-extension-methods/" class="md-nav__link">
+        IElement required extension methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Null-Handling/" class="md-nav__link">
+        Null Handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Templates/" class="md-nav__link">
+        BHoM coding templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/The-IImmutable-interface/" class="md-nav__link">
+        The IImmutable interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/The-%60External%60-class/" class="md-nav__link">
+        The `External` class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Toolkits-targeting-multiple-versions-of-the-same-software/" class="md-nav__link">
+        Toolkits targeting multiple versions of the same software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/Using-Visual-Studio/" class="md-nav__link">
+        Using Visual Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/Development%20FAQ/namespaces/" class="md-nav__link">
+        Namespaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Conventions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conventions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Conventions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conventions/BHoM-Structural-Conventions/" class="md-nav__link">
+        BHoM Structural Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conventions/BHoM-Units-conventions/" class="md-nav__link">
+        BHoM Units conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conventions/BHoM-View-quality-conventions/" class="md-nav__link">
+        View quality conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conventions/Shear-Area-Derivation/" class="md-nav__link">
+        Shear Area Derivation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Code Compliance and CI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Compliance and CI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Code Compliance and CI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/" class="md-nav__link">
+        Code compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/Continuous-integration/" class="md-nav__link">
+        Continuous Integration (CI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          CI Checks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CI Checks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          CI Checks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-All/" class="md-nav__link">
+        Check All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Branch-Compliance/" class="md-nav__link">
+        Check Branch Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Code-Compliance/" class="md-nav__link">
+        Check Code Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Compliance/" class="md-nav__link">
+        Check Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Copyright-Compliance/" class="md-nav__link">
+        Check Copyright Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Core/" class="md-nav__link">
+        Check Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Dataset-Compliance/" class="md-nav__link">
+        Check Dataset Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Documentation-Compliance/" class="md-nav__link">
+        Check Documentation Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Installer/" class="md-nav__link">
+        Check Installer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Null-Handling/" class="md-nav__link">
+        Check Null Handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-PR-Builds/" class="md-nav__link">
+        Check-PR-Builds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Project-Compliance/" class="md-nav__link">
+        Check Project Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Ready-To-Merge/" class="md-nav__link">
+        Check Ready To Merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Required/" class="md-nav__link">
+        Check Required
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Serialisation/" class="md-nav__link">
+        Check Serialisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Unit-Tests/" class="md-nav__link">
+        Check Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Checks/Check-Versioning/" class="md-nav__link">
+        Check Versioning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          CI Failures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CI Failures" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          CI Failures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/AssemblyInfo-compliance/" class="md-nav__link">
+        AssemblyInfo compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/AttributeHasEndingPunctuation/" class="md-nav__link">
+        AttributeHasEndingPunctuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/EngineClassMatchesFilePath/" class="md-nav__link">
+        EngineClassMatchesFilePath
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasConstructor/" class="md-nav__link">
+        HasConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasDescriptionAttribute/" class="md-nav__link">
+        HasDescriptionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasOneConstructor/" class="md-nav__link">
+        HasOneConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasOutputAttribute/" class="md-nav__link">
+        HasOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasPublicGet/" class="md-nav__link">
+        HasPublicGet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasSingleClass/" class="md-nav__link">
+        HasSingleClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasSingleNamespace/" class="md-nav__link">
+        HasSingleNamespace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasUniqueMultiOutputAttributes/" class="md-nav__link">
+        HasUniqueMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasUniqueOutputAttribute/" class="md-nav__link">
+        HasUniqueOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasValidConstructor/" class="md-nav__link">
+        HasValidConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasValidCopyright/" class="md-nav__link">
+        HasValidCopyright
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasValidMultiOutputAttributes/" class="md-nav__link">
+        HasValidMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasValidOutputAttribute/" class="md-nav__link">
+        HasValidOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/HasValidPreviousVersionAttribute/" class="md-nav__link">
+        HasValidPreviousVersionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/InputAttributeHasMatchingParameter/" class="md-nav__link">
+        InputAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/InputAttributeIsUnique/" class="md-nav__link">
+        InputAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/InputParameterStartsLower/" class="md-nav__link">
+        InputParameterStartsLower
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsExtensionMethod/" class="md-nav__link">
+        IsExtensionMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsInputAttributePresent/" class="md-nav__link">
+        IsInputAttributePresent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsPublicClass/" class="md-nav__link">
+        IsPublicClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsPublicProperty/" class="md-nav__link">
+        IsPublicProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsStaticClass/" class="md-nav__link">
+        IsStaticClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsUsingCustomData/" class="md-nav__link">
+        IsUsingCustomData
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidConvertMethodName/" class="md-nav__link">
+        IsValidConvertMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidCreateMethod/" class="md-nav__link">
+        IsValidCreateMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidCreateMethodName/" class="md-nav__link">
+        IsValidCreateMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidDataset/" class="md-nav__link">
+        IsValidDataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidEngineClassName/" class="md-nav__link">
+        IsValidEngineClassName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsValidIImmutableObject/" class="md-nav__link">
+        IsValidIImmutableObject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/IsVirtualProperty/" class="md-nav__link">
+        IsVirtualProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/MethodNameContainsFileName/" class="md-nav__link">
+        MethodNameContainsFileName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/MethodNameStartsUpper/" class="md-nav__link">
+        MethodNameStartsUpper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/ModifyReturnsDifferentType/" class="md-nav__link">
+        ModifyReturnsDifferentType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/ModifyReturnsSameType/" class="md-nav__link">
+        ModifyReturnsSameType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/ObjectNameMatchesFileName/" class="md-nav__link">
+        ObjectNameMatchesFileName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/PreviousInputNamesAttributeHasMatchingParameter/" class="md-nav__link">
+        PreviousInputNamesAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/PreviousInputNamesAttributeIsUnique/" class="md-nav__link">
+        PreviousInputNamesAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/Project-References-and-Build-Paths/" class="md-nav__link">
+        Project References and Build Paths
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Code%20Compliance%20and%20CI/CI%20Failures/PropertyAccessorsHaveNoBody/" class="md-nav__link">
+        PropertyAccessorsHaveNoBody
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Datasets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datasets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Datasets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Datasets/" class="md-nav__link">
+        BHoM Datasets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Diffing and Hashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diffing and Hashing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diffing and Hashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Configuring-Revit-objects-comparison-%28RevitComparisonConfig%29/" class="md-nav__link">
+        Configuring Revit objects comparison (RevitComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Configuring-objects-comparison-%28ComparisonConfig%29/" class="md-nav__link">
+        Configuring objects comparison (ComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Diffing-and-Hashing-%E2%80%93-guide-for-developers/" class="md-nav__link">
+        Diffing and Hashing – guide for developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Diffing-%E2%80%93-tracking-changes-in-your-BHoM-objects/" class="md-nav__link">
+        Diffing – tracking changes in your BHoM objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diffing%20and%20Hashing/Hash-%E2%80%93-an-object%27s-identity/" class="md-nav__link">
+        Hash – an object's identity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Releases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Releases/Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Releases/Releases-and-Versioning/" class="md-nav__link">
+        Releases and Versioning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Versioning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versioning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Versioning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Versioning BHoM objects and methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Versioning BHoM objects and methods
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-versioning" class="md-nav__link">
+    Why do we need versioning?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it work ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralisation-of-the-upgrade-information" class="md-nav__link">
+    Decentralisation of the upgrade information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-namespaces" class="md-nav__link">
+    Modifying namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-names-of-types" class="md-nav__link">
+    Modifying names of types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-methods" class="md-nav__link">
+    Modifying methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-objects" class="md-nav__link">
+    Upgrading objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-property-names" class="md-nav__link">
+    Modifying property names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-for-deleted-items-or-items-without-upgrades" class="md-nav__link">
+    Message for deleted items or items without upgrades
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-a-dataset-name-or-location" class="md-nav__link">
+    Modifying a Dataset name or location
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying a Dataset name or location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removed-dataset" class="md-nav__link">
+    Removed Dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-upgrade-doesnt-happen-how-can-i-debug" class="md-nav__link">
+    The upgrade doesn't happen - How can I debug ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    Technical details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-walk-throughs" class="md-nav__link">
+    Example walk throughs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2022-Q1---Reflection-oM-Engine-migration-to-Base-oM-Engine/" class="md-nav__link">
+        2022 Q1   Reflection oM Engine migration to Base oM Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Backwards-compatibility/" class="md-nav__link">
+        Backwards compatibility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Change-to-a-property-name/" class="md-nav__link">
+        Change to a property name.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="How-to-check-your-versioned-changes-are-working/" class="md-nav__link">
+        How to check your versioned changes are working ?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Object-name-change-and-associated-custom-create-method/" class="md-nav__link">
+        Object name change and associated custom create method
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-versioning" class="md-nav__link">
+    Why do we need versioning?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it work ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decentralisation-of-the-upgrade-information" class="md-nav__link">
+    Decentralisation of the upgrade information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-namespaces" class="md-nav__link">
+    Modifying namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-names-of-types" class="md-nav__link">
+    Modifying names of types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-methods" class="md-nav__link">
+    Modifying methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-objects" class="md-nav__link">
+    Upgrading objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-property-names" class="md-nav__link">
+    Modifying property names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-for-deleted-items-or-items-without-upgrades" class="md-nav__link">
+    Message for deleted items or items without upgrades
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-a-dataset-name-or-location" class="md-nav__link">
+    Modifying a Dataset name or location
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying a Dataset name or location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removed-dataset" class="md-nav__link">
+    Removed Dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-upgrade-doesnt-happen-how-can-i-debug" class="md-nav__link">
+    The upgrade doesn't happen - How can I debug ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    Technical details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-walk-throughs" class="md-nav__link">
+    Example walk throughs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="versioning-bhom-objects-and-methods">Versioning BHoM objects and methods</h1>
+<ul>
+<li><a href="#why-do-we-need-versioning-">Why do we need versioning ?</a></li>
+<li><a href="#how-does-it-work-">How does it work ?</a></li>
+<li><a href="#decentralisation-of-the-upgrade-information">Decentralisation of the upgrade information</a></li>
+<li><a href="#modifying-namespaces">Modifying namespaces</a></li>
+<li><a href="#modifying-methods">Modifying methods</a></li>
+<li><a href="#upgrading-objects">Upgrading objects</a></li>
+<li><a href="#message-for-deleted-items-or-items-without-upgrades">Message for deleted items or items without upgrades</a></li>
+<li><a href="#the-upgrade-doesnt-happen---how-can-i-debug-">The upgrade doesn't happen - How can I debug ?</a></li>
+<li><a href="#technical-details">Technical details</a></li>
+<li><a href="#example-walk-throughs">Example walk throughs</a></li>
+</ul>
+<h2 id="why-do-we-need-versioning">Why do we need versioning?</h2>
+<p>When a script created in one of our supported UI is saved, all the BHoM components save information about themselves so they can initialise properly when the script is re-opened. That information is simply kept in a string format (more precisely Json format) and contains details such as the component/method name, it's argument types, output types, ... </p>
+<p>If someone modifies a method definition in the code, it will become impossible to find that method based on outdated information and the initialisation of the component will fail. Unless, of course, we provide to the system a way to update that old json before using it to find the method.</p>
+<p>The same logic applies for saved types (e.g. types of input/output of a component) and saved objects (e.g. objects stored in a database or file).</p>
+<h2 id="how-does-it-work">How does it work ?</h2>
+<p>Alongside the dlls installed in <code>AppData\Roaming\BHoM\Assemblies</code>, you can find in the <code>bin</code> sub-folder a series of <code>BHoMUpgrader</code> exe programs. When a type/method/object fails to deserialise from its string representation (json), those upgrader are called to the rescue.</p>
+<p>Every quarter, when we release a new beta installer, we also produce a new upgrader named <code>BHoMUpgrader</code> with the version number attached at the end (e.g. <code>BHoMUpgrader32</code> for version 3.2). That upgrader contains all the changes to the code that occurred during the quarter.</p>
+<p>When deserialisation fails in the BHoM, the BHoM version used to serialise the object is retrieved from the json. The json is then upgraded to the following version repeatedly until it reaches the current version where it can finally be deserialised into a BHoM object.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/16853390/120576933-23b18480-c456-11eb-9a1c-c1ebf8995257.png" /></p>
+<h2 id="decentralisation-of-the-upgrade-information">Decentralisation of the upgrade information</h2>
+<p>We will go in details on how the upgrade information is stored inside an upgrader in the remaining sections. There is however one aspect worth mentioning already. Once a quarter is finished, an upgrader is never modified again and simply redistributed alongside the others. During that quarter however, the current upgrader is constantly updated to reflect the new changes. For everyone working on the BHoM to have to modify the exact same files inside the Versioning_Toolkit would be inconvenient and a frequent source of clashes. For that reason, the information related to the upgraded of the current quarter are stored locally at the root of each project where the change occurred. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/16853390/82024761-dcc5e500-96c2-11ea-86fc-53a6df0f14f5.png" /></p>
+<p>Notice that the file name ends with the version of the BHoM it applies to.</p>
+<p>The content of an empty <code>Versioning_XX.json</code> file is as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&quot;Property&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">&quot;MessageForDeleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nt">&quot;MessageForNoUpgrade&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>When the UI_PostBuild process that copies all the BHoM assemblies to the Roaming folder is ran (i.e. when BHoM_UI is compiled), the information from all the <code>Versioning_XX.json</code> files is collected and compiled in to a single json file copied to the roaming folder next to the BHoMUpgrader executable. It's content will look similar to the local json files with an extra section for the methods (more onto that later):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;Namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;BH.Engine.XML&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.Engine.External.XML&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;BH.oM.XML&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.External.XML&quot;</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;BH.Engine.External.XML&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.Engine.XML&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">&quot;BH.oM.External.XML&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.XML&quot;</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="nt">&quot;BH.oM.Base.IBHoMFragment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Base.IFragment&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="nt">&quot;BH.oM.Adapters.ETABS.EtabsConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Adapters.ETABS.EtabsSettings&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">&quot;BH.oM.Base.IFragment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Base.IBHoMFragment&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="nt">&quot;BH.oM.Adapters.ETABS.EtabsSettings&quot;</span><span class="p">:</span><span class="s2">&quot;BH.oM.Adapters.ETABS.EtabsConfig&quot;</span><span class="w"> </span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="nt">&quot;Method&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">        </span><span class="nt">&quot;BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">            </span><span class="nt">&quot;_t&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;System.Reflection.MethodBase&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">            </span><span class="nt">&quot;TypeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\&quot; }&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">            </span><span class="nt">&quot;MethodName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.ctor&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">            </span><span class="nt">&quot;Parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.oM.Adapter.FileSettings\&quot; }&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="nt">&quot;BH.Engine.Geometry.Compute.ClipPolylines(BH.oM.Geometry.Polyline, BH.oM.Geometry.Polyline)&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">            </span><span class="nt">&quot;_t&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;System.Reflection.MethodBase&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">            </span><span class="nt">&quot;TypeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.Engine.Geometry.Compute, Geometry_Engine, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\&quot; }&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">            </span><span class="nt">&quot;MethodName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BooleanIntersection&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">            </span><span class="nt">&quot;Parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.oM.Geometry.Polyline\&quot; }&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.oM.Geometry.Polyline\&quot; }&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\&quot; }&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">  </span><span class="nt">&quot;Property&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">    </span><span class="nt">&quot;ToNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="nt">&quot;BH.oM.Structure.Elements.Bar.StartNode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Structure.Elements.Bar.Start&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">        </span><span class="nt">&quot;BH.oM.Structure.Elements.Bar.EndNode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Structure.Elements.Bar.End&quot;</span><span class="w"></span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="nt">&quot;ToOld&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">        </span><span class="nt">&quot;BH.oM.Structure.Elements.Bar.Start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Structure.Elements.Bar.StartNode&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">        </span><span class="nt">&quot;BH.oM.Structure.Elements.Bar.End&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BH.oM.Structure.Elements.Bar.End&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">  </span><span class="nt">&quot;MessageForDeleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">  </span><span class="nt">&quot;MessageForNoUpgrade&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Let's now go into details on how to record a change on the code for the various possible aspects that can be modified.</p>
+<h2 id="modifying-namespaces">Modifying namespaces</h2>
+<p>This applies to the case where an entire namespace is renamed. This means all the elements inside that namespace will now belong to a new namespace. </p>
+<p>To record that change, simply provide the old namespace as key and teh new namespace as value to the <code>Namspace.ToNew</code> section of the json file. If you want the change to be backward compatible, you can also fill the <code>ToOld</code> section with the mirrored information.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  &quot;Namespace&quot;: {
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>      &quot;BH.oM.XML&quot;:  &quot;BH.oM.External.XML&quot;,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    },
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>      &quot;BH.oM.External.XML&quot;: &quot;BH.oM.XML&quot;,
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    }
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  },
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ...
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>}
+</code></pre></div>
+<h2 id="modifying-names-of-types">Modifying names of types</h2>
+<p>Modifying the name of a type works very much the same way. Provide the full name of the old type (namespace + type name) as key and the full name of the new type as value. If you want the change to be backward compatible, you can also fill the <code>ToOld</code> section with the mirrored information.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  ...
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  &quot;Type&quot;: {
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      &quot;BH.oM.XML.Settings.XMLSettings&quot;: &quot;BH.oM.External.XML.Settings.GBXMLSettings&quot;,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      &quot;BH.oM.XML.Environment.DocumentBuilder&quot;: &quot;BH.oM.External.XML.GBXML.GBXMLDocumentBuilder&quot;
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    },
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      &quot;BH.oM.External.XML.Settings.GBXMLSettings&quot;: &quot;BH.oM.XML.Settings.XMLSettings&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      &quot;BH.oM.External.XML.GBXML.GBXMLDocumentBuilder&quot;: &quot;BH.oM.XML.Environment.DocumentBuilder&quot;
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    }
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  }
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>}
+</code></pre></div>
+<h2 id="modifying-methods">Modifying methods</h2>
+<p>Technically, we could the exact same thing for methods as we have done for types and namespaces. The content to provide is a bit more complex though. See for example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  &quot;Method&quot;: {
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      &quot;BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)&quot;: {
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        &quot;_t&quot;: &quot;System.Reflection.MethodBase&quot;,
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        &quot;TypeName&quot;: &quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.Adapter.XML.XMLAdapter, XML_Adapter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null\&quot; }&quot;,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        &quot;MethodName&quot;: &quot;.ctor&quot;,
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        &quot;Parameters&quot;: [
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>          &quot;{ \&quot;_t\&quot; : \&quot;System.Type\&quot;, \&quot;Name\&quot; : \&quot;BH.oM.Adapter.FileSettings\&quot; }&quot;
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        ]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>      }
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    },
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    }
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  }
+</code></pre></div>
+<p><em><strong>IF</strong></em> you want to go that route, you can simply provide a <code>Method</code> section in the <code>VersioningXX.json</code> file and it will be picked up with the rest during the <code>UI_PostBuild</code> process. To create the key, you can use the <code>VersionKey</code> component <em><strong>before doing the change on your method</strong></em>:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/16853390/82109653-52d15700-976a-11ea-9da5-cb60df287dcb.png" /></p>
+<p>If you update a constructor, just leave the <code>methodName</code> input empty.</p>
+<p>The representation of the new method is simply the json string.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/16853390/82109755-2964fb00-976b-11ea-838e-ad9b80ff2455.png" /></p>
+<p>But that's messy and admittedly difficult to read of you need to come back to it and check what is in the upgraded methods section.</p>
+<p><em><strong>SO</strong></em>, instead we recommend you use a <code>PreviousVersion</code> attribute on the method you have modified. For example, here's what it looks like for a constructor and a regular method:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">XMLAdapter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BHoMAdapter</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="na">[Description(&quot;Specify XML file and properties for data transfer&quot;)]</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="na">[Input(&quot;fileSettings&quot;, &quot;Input the file settings to get the file name and directory the XML Adapter should use&quot;)]</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="na">[Input(&quot;xmlSettings&quot;, &quot;Input the additional XML Settings the adapter should use. Only used when pushing to an XML file. Default null&quot;)]</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="na">[Output(&quot;adapter&quot;, &quot;Adapter to XML&quot;)]</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="na">[PreviousVersion(&quot;3.2&quot;, &quot;BH.Adapter.XML.XMLAdapter(BH.oM.Adapter.FileSettings, BH.oM.XML.Settings.XMLSettings)&quot;)]</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">XMLAdapter</span><span class="p">(</span><span class="n">BH</span><span class="p">.</span><span class="n">oM</span><span class="p">.</span><span class="n">Adapter</span><span class="p">.</span><span class="n">FileSettings</span><span class="w"> </span><span class="n">fileSettings</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="c1">//....</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Create</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="na">[PreviousVersion(&quot;3.2&quot;, &quot;BH.Engine.Adapters.Revit.Create.FilterFamilyTypesOfFamily(BH.oM.Base.IBHoMObject)&quot;)]</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="na">[Description(&quot;Creates an IRequest that filters Revit Family Types of input Family.&quot;)]</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="na">[Input(&quot;bHoMObject&quot;, &quot;BHoMObject that contains ElementId of a correspondent Revit element under Revit_elementId CustomData key - usually previously pulled from Revit.&quot;)]</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="na">[Output(&quot;F&quot;, &quot;IRequest to be used to filter Revit Family Types of a Family.&quot;)]</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">FilterTypesOfFamily</span><span class="w"> </span><span class="nf">FilterTypesOfFamily</span><span class="p">(</span><span class="n">IBHoMObject</span><span class="w"> </span><span class="n">bHoMObject</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="c1">//....</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Notice that you still have to create the key using the <code>VersionKey</code> component but at least you don't have to deal with raw json.</p>
+<h2 id="upgrading-objects">Upgrading objects</h2>
+<p>So far, we have focused on upgrading items that are used to save and restore components in the UI. But what about actual objects stored in a database or a file ? Well, if only their namespace or type name was modified, the solutions above will be enough. But what if you completely redesigned that type of object and changed the Properties that define it ?</p>
+<p>This case cannot be solved by a simple replacement of a string and will most likely require some calculations to go from the old object to the new one. This means we need a method that takes the old object in and return the new. Two things about that: 
+- The old object definition will not exist anymore so we cannot use that as the input of the conversion method. Instead we will use a Dictionary containing the properties for both input and output of that conversion method. The other benefit is that the upgrader will not have to depend on BHoM dlls to be able to do the conversion.
+- The conversion method needs to be compile and the upgrader needs to be able to access it. While there are ways to keep the conversion method decentralised, it is way simpler to have it in the versioning toolkit directly. This means this is the only case where you cannot just write the upgrade from your own repo. Luckily, this case is less frequent than the others.</p>
+<p>So what do you need to do to cover the upgrade then ?
+- First, locate the <code>Converter.cs</code> file int the project of the current upgrader.
+- In that file, write a conversion method with the following signature: <code>public static Dictionary&lt;string, object&gt; UpgradeOldClassName(Dictionary&lt;string, object&gt; old)</code>. 
+- In the <code>Converter</code> constructor, add that method to the <code>ToNewObject</code> Dictionary. the key is that object type full name (namespace + type name) and the value is the method.
+- If you want to cover backward compatibility, you can also write a <code>DowngradeNewClassName</code> method and add it to the <code>ToOldObject</code> dictionary.</p>
+<p>Here's an example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Converter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span><span class="p">.</span><span class="n">Converter</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="cm">/***************************************************/</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="cm">/**** Constructors                              ****/</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="cm">/***************************************************/</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Converter</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="n">PreviousVersion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="n">ToNewObject</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;BH.oM.Versioning.OldVersion&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UpgradeOldVersion</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="cm">/***************************************************/</span><span class="w"></span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="cm">/**** Private Methods                           ****/</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="cm">/***************************************************/</span><span class="w"></span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">object</span><span class="p">&gt;</span><span class="w"> </span><span class="n">UpgradeOldVersion</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">object</span><span class="p">&gt;</span><span class="w"> </span><span class="n">old</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">old</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">old</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span><span class="w"> </span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">            </span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">old</span><span class="p">[</span><span class="s">&quot;A&quot;</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">old</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">            </span><span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">old</span><span class="p">[</span><span class="s">&quot;B&quot;</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">object</span><span class="p">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">        </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;_t&quot;</span><span class="p">,</span><span class="w">  </span><span class="s">&quot;BH.oM.Versioning.NewVersion&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;AplusB&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;AminusB&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">-</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">        </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">    </span><span class="cm">/***************************************************/</span><span class="w"></span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>A few things to notice:
+- You are working from a Dictionary so make sure that the properties exist before using them
+- You will also need to cast them since the dictionary values are all objects
+- Make sure to provide the new object type in the dictionary by defining the "_t" property.</p>
+<h2 id="modifying-property-names">Modifying property names</h2>
+<p>For the case where an object type was only modified by renaming some of its property, we have a simpler solution. One very similar to what was done for namespaces and type names actually. </p>
+<p>As a key, provide the full name of the containing type (namespace + type name) followed by the old property name. As a value as key, do the same but with the new property name. If you want the change to be backward compatible, you can also fill the <code>ToOld</code> section with the mirrored information.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&quot;Property&quot;: {
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        &quot;BH.oM.Structure.Elements.Bar.StartNode&quot;: &quot;Start&quot;,
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        &quot;BH.oM.Structure.Elements.Bar.EndNode&quot;: &quot;End&quot;
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    },
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        &quot;BH.oM.Structure.Elements.Bar.Start&quot;: &quot;StartNode&quot;,
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        &quot;BH.oM.Structure.Elements.Bar.End&quot;: &quot;End&quot;,
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    }
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  }
+</code></pre></div>
+<h2 id="message-for-deleted-items-or-items-without-upgrades">Message for deleted items or items without upgrades</h2>
+<p>In rare cases, an upgrade is simply not possible:
+- The item was deleted without replacement
+- A replacement exists but is so different from the original that an automatic conversion is impossible.</p>
+<p>In both cases, it is important to inform the user and provide them with as much information as possible to facilitate the transition to the new version of the code. Here are a few example of how this can be achieved:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  ...
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  &quot;MessageForDeleted&quot;: {
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;BH.oM.Adapters.DIALux.Furnishing&quot;: &quot;This object was provided to build up DIALux models within a BHoM UI, but was deemed to be unnecessary with the suitable conversions between existing Environmental objects and DIALux provided by the DIALux Adapter. To avoid confusion, this object has been removed. If further assistance is needed, please raise an issue on https://github.com/BHoM/DIALux_Toolkit/issues&quot;,
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    &quot;BH.Engine.Grasshopper.Compute.IRenderMeshes(BH.oM.Geometry.IGeometry, Grasshopper.Kernel.GH_PreviewMeshArgs)&quot;: &quot;The method was made internal to the Grasshopper Toolkit. If you still need to render objects, consider using one of the Render methods from BH.Engine.Representation instead&quot;,
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    &quot;BH.Engine.Adapters.Revit.Query.Location(BH.oM.Adapters.Revit.Elements.ModelInstance)&quot;: &quot;This method was a duplicate of GetProperty method, please use the latter instead.&quot;,
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    &quot;BH.Engine.BuildingEnvironment.Convert.ToConstruction(BH.oM.Base.CustomObject)&quot;: &quot;This method was providing a highly specific conversion between a specific custom data schema and Environment Materials that is no longer relevant to the workflows provided in Environments. It is advised to create materials manually using the Solid or Gas types as appropriate. For more assistance please raise an issue for discussion on https://github.com/BuroHappoldEngineering/BuildingEnvironments_Toolkit/issues&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  },
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  &quot;MessageForNoUpgrade&quot;: {
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    &quot;BH.oM.Structure.Loads.BarVaryingDistributedLoad&quot;: &quot;The object has been redefined in such a way that automatic versioning is not possible. To reinstate the objects you could try exploding the CustomObject that will have been returned and make use of the BH.Enigne.Structure.Create.BarVaryingDistributedLoadDistanceBothEnds method from the Structures_Engine. If doing this, treat DistanceFromA as startToStartDistance and DistanceFromB as endToEndDistance. Also, treat ForceA and MomentA as ForceAtStart and MomentAtStart, and ForceB and MomentB as ForceAtEnd and MomentAtEnd. If you have any issues with the above, please feel free to raise an issue at https://github.com/BHoM/BHoM_Engine/issues.&quot;,
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    &quot;BH.Engine.Reflection.Modify.SetPropertyValue(System.Collections.Generic.List&lt;BH.oM.Base.IBHoMObject&gt;, System.Type, System.String, System.Object)&quot;: &quot;Please use BH.Engine.Reflection.Modify.SetPropertyValue(object obj, string propName, object value) instead.&quot;,
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    &quot;BH.Engine.Base.Compute.Hash(BH.oM.Base.IObject, System.Collections.Generic.List&lt;System.String&gt;, System.Collections.Generic.List&lt;System.String&gt;, System.Collections.Generic.List&lt;System.String&gt;, System.Collections.Generic.List&lt;System.Type&gt;, System.Int32)&quot;: &quot;This method&#39;s functionality has changed deeply with respect to an older version of BHoM. Please replace this component with BH.Engine.Base.Query.Hash(), then plug the inputs as needed.&quot;,
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    &quot;BH.Engine.Adapters.Revit.Create.ViewPlan&quot;: &quot;This method is not available any more. To reinstate the object, please use BH.Engine.Adapters.Revit.Create(string, string) instead.&quot;,
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    &quot;BH.oM.LifeCycleAssessment.MEPScope&quot;: &quot;This object has been updated to include new features to enhance calculations for LifeCycleAssesment workflows. Please update the object on the canvas using the default create component to update this component. For further assistance, please raise an issue on https://github.com/BHoM/LifeCycleAssessment_Toolkit/issues&quot;,
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  }
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>}
+</code></pre></div>
+<h2 id="modifying-a-dataset-name-or-location">Modifying a Dataset name or location</h2>
+<p>Updating the path to a Dataset works in a similar manner to changes to names of types. The path to a dataset is changed the path from C:\ProgramData\BHoM\Datasets leading up to the json file has been changed in any way. This could be for example be one or more of the following:</p>
+<ul>
+<li>The name of the json file has been changed</li>
+<li>The name of the folder or any super-folder of the json file has been changed</li>
+<li>An additional folder has been added to the path</li>
+<li>A folder has been removed from the path</li>
+</ul>
+<p>When this has happened, the <code>Dataset</code> part of the versioning file should be modified. An example is shown below for versioning required for moving all structural materials to a super-folder called <code>Structure</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  &quot;Dataset&quot;: {
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      &quot;Materials\\MaterialsEurope\\Concrete&quot;: &quot;Structure\\Materials\\MaterialsEurope\\Concrete&quot;,
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>      &quot;Materials\\MaterialsEurope\\Rebar&quot;: &quot;Structure\\Materials\\MaterialsEurope\\Rebar&quot;,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>      &quot;Materials\\MaterialsEurope\\Steel(Grade)&quot;: &quot;Structure\\Materials\\MaterialsEurope\\Steel(Grade)&quot;,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>      &quot;Materials\\MaterialsEurope\\Steel&quot;: &quot;Structure\\Materials\\MaterialsEurope\\Steel&quot;,
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>      &quot;Materials\\MaterialsUSA\\Concrete&quot;: &quot;Structure\\Materials\\MaterialsUSA\\Concrete&quot;,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>      &quot;Materials\\MaterialsUSA\\Steel&quot;: &quot;Structure\\Materials\\MaterialsUSA\\Steel&quot;,
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    },
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>      &quot;Structure\\Materials\\MaterialsEurope\\Concrete&quot;: &quot;Materials\\MaterialsEurope\\Concrete&quot;,
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>      &quot;Structure\\Materials\\MaterialsEurope\\Rebar&quot;: &quot;Materials\\MaterialsEurope\\Rebar&quot;,
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>      &quot;Structure\\Materials\\MaterialsEurope\\Steel(Grade)&quot;: &quot;Materials\\MaterialsEurope\\Steel(Grade)&quot;,
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>      &quot;Structure\\Materials\\MaterialsEurope\\Steel&quot;: &quot;Materials\\MaterialsEurope\\Steel&quot;,
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>      &quot;Structure\\Materials\\MaterialsUSA\\Concrete&quot;: &quot;Materials\\MaterialsUSA\\Concrete&quot;,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>      &quot;Structure\\Materials\\MaterialsUSA\\Steel&quot;: &quot;Materials\\MaterialsUSA\\Steel&quot;,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    }
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>  }
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>}
+</code></pre></div>
+<p>When versioning Dataset the <code>ToNew</code> segment is required, and not optional. This is for the BHoM_UI to be able to update components linking to the Dataset.</p>
+<p>The <code>ToOld</code>versioning of Dataset is optional, but shouold be done if the developer wants to ensure that the Dataset still is acessible from the same serach paths as before, for calls to the methods in the Library_Engine to still work. This could for example be to ensure the call <code>BH.Engine.Library.Libraries("Materials\\MaterialsEurope\\Concrete")</code> still returns the same Dataset as before the change was made. It is strongly recomended that calls like the above from  code is updated at the same time as the change to the dataset is made, but generally recomended that the <code>ToOld</code> versioning is done to ensure calls from any UI and that code calls to the methods outside the control of the developer making the change is still functions as before.</p>
+<h3 id="removed-dataset">Removed Dataset</h3>
+<p>When a dataset is removed without a replacement, a message should be provided, similar to how it is done for objects and methods. For datasets this is done via the MessageForDeleted section of the Dataset part of the upgrade. Example below showcasing a case where the European concrete and rebar materials have been removed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  &quot;Dataset&quot;: {
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    &quot;ToNew&quot;: {
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    },
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    &quot;ToOld&quot;: {
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    }
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    &quot;MessageForDeleted&quot;: {
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>      &quot;Materials\\MaterialsEurope\\Concrete&quot;: &quot;Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.&quot;,
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>      &quot;Materials\\MaterialsEurope\\Rebar&quot;: &quot;Clear message why this dataset has been removed. Point of contact (could be a github repository) where the user can ask questions about why this was removed.&quot;,
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    }
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  }
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>}
+</code></pre></div>
+<h2 id="the-upgrade-doesnt-happen-how-can-i-debug">The upgrade doesn't happen - How can I debug ?</h2>
+<p>The upgrader are independent exe files so you cannot reach them by attaching to your UI process as you would normally do when debugging the BHoM. They are also hidden processed so you don't have command windows popping up when opening old scripts. In case, you need to figure out what is going on in there, you can always have those upgrade processes visible by commenting two lines of code in the Versioning_Engine (situated on the code <code>BHoM_Engine</code> repo):</p>
+<ul>
+<li>In the Versioning-Engine project, find the <code>ToNewVersion</code> file</li>
+<li>In that file, find the <code>GetPipe</code> method </li>
+<li>Toward the end of that method, comment out the following line:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">process</span><span class="p">.</span><span class="n">StartInfo</span><span class="p">.</span><span class="n">UseShellExecute</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">process</span><span class="p">.</span><span class="n">StartInfo</span><span class="p">.</span><span class="n">CreateNoWindow</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+- recompile the solution and the BHoM_UI as usual</p>
+<p>You should now have command windows popping up as soon as the upgrader are needed. You should also find the BHoMUpgrader processes in your task manager.</p>
+<h2 id="technical-details">Technical details</h2>
+<p>If you want to know about how the upgrader does its job, this section is for you. Otherwise, feel free to skip it.</p>
+<p>The diagram below show the chains of calls between the 3 main upgrade methods:
+- UpgradeMethod
+- UpgradeType
+- UPgradeObject</p>
+<p>Note that <code>UpgradeType</code> is actually covering both the namespace replacement and the type name replacement. The reason behind it is that they come down to the same string replacement principles both at the beginning of an item full name (since types include their namespace in their full name too).</p>
+<p>Also note that those three are the 3 places where an older upgrader can be called if needed.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/16853390/82113415-7905ef80-9788-11ea-8d77-53c153286a2f.png" /></p>
+<h2 id="example-walk-throughs">Example walk throughs</h2>
+<ul>
+<li><a href="/How-to-check-your-versioned-changes-are-working-%3F">How to check your versioned changes are working</a></li>
+<li><a href="/Change-to-a-property-name">Property name change</a></li>
+<li><a href="/Object-name-change-and-associated-custom-create-method">Object name change and associated custom create method</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Releases/Releases-and-Versioning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Releases and Versioning" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Releases and Versioning
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="2022-Q1---Reflection-oM-Engine-migration-to-Base-oM-Engine/" class="md-footer__link md-footer__link--next" aria-label="Next: 2022 Q1   Reflection oM Engine migration to Base oM Engine" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2022 Q1   Reflection oM Engine migration to Base oM Engine
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2022 BHoM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.top"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

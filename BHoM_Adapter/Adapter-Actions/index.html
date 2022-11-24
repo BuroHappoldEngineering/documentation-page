@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../_images/logos/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Adapter actions - BHoM documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#adapter-actions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BHoM documentation" class="md-header__button md-logo" aria-label="BHoM documentation" data-md-component="logo">
+      
+  <img src="../../_images/logos/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BHoM documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adapter actions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BHoM documentation" class="md-nav__button md-logo" aria-label="BHoM documentation" data-md-component="logo">
+      
+  <img src="../../_images/logos/logo.png" alt="logo">
+
+    </a>
+    BHoM documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to the BHoM documentation!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/" class="md-nav__link">
+        What is the BHoM for?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/Installing-BHoM/" class="md-nav__link">
+        Installing BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/Structure-of-the-BHoM/" class="md-nav__link">
+        Structure of the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/Technical-philosophy-of-the-BHoM/" class="md-nav__link">
+        Technical philosophy of the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/The-BHoM-Toolkit/" class="md-nav__link">
+        What is a BHoM Toolkit?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/Using-the-BHoM/" class="md-nav__link">
+        Using the BHoM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          BHoM oM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM oM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM oM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BHoM_oM/" class="md-nav__link">
+        The Object Model (oM): define new objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BHoM_oM/Geometry_oM/" class="md-nav__link">
+        Geometry_oM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          BHoM Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BHoM_Engine/" class="md-nav__link">
+        What is the BHoM Engine?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BHoM_Engine/BHoM_Engine-Classes/" class="md-nav__link">
+        BHoM Engine Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          BHoM Adapter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM Adapter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM Adapter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction to the BHoM_Adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adapter-Actions---advanced-parameters/" class="md-nav__link">
+        Adapter Actions: advanced parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Adapter actions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Adapter actions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    ⚠️ Note ⚠️
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-adapter-actions-work" class="md-nav__link">
+    How the Adapter Actions work
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Adapter Actions work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-crud-paradigm" class="md-nav__link">
+    The CRUD paradigm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-the-push-action" class="md-nav__link">
+    An example: the Push Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-detail-why-the-actions-crud-paradigm" class="md-nav__link">
+    In detail: Why the "Actions-CRUD" paradigm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-note-why-using-five-different-actions-push-pull-move-remove-execute" class="md-nav__link">
+    Side note: Why using five different Actions (Push, Pull, Move, Remove, Execute)...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-note-other-advantages-of-the-actions-crud-paradigm" class="md-nav__link">
+    Side note: Other advantages of the "Actions-CRUD" paradigm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crud-methods-details-and-implementation" class="md-nav__link">
+    CRUD methods: details and implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Implement-an-Adapter/" class="md-nav__link">
+        Implement an Adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural-Adapters/" class="md-nav__link">
+        Structural Engineering adapters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-CRUD-methods/" class="md-nav__link">
+        The CRUD methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          BHoM UI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BHoM UI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          BHoM UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BHoM_UI/" class="md-nav__link">
+        BH.UI: Expose your code to User Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Creating-a-New-Repo/" class="md-nav__link">
+        Creating a New Repo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Editing-the-documentation/" class="md-nav__link">
+        Editing the documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Getting-started-for-developers/" class="md-nav__link">
+        Getting started for developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Icons/" class="md-nav__link">
+        Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Open-Sourcing-Procedure/" class="md-nav__link">
+        Open Sourcing Procedure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Resolving-an-Issue/" class="md-nav__link">
+        Resolving an Issue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Submitting-an-Issue/" class="md-nav__link">
+        Submitting an Issue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Using-the-SCRUM-Board/" class="md-nav__link">
+        Using the SCRUM Board
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          Development FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Development FAQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Code-Attributes/" class="md-nav__link">
+        Code Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Coding-Style/" class="md-nav__link">
+        Coding Style
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Coding-together-avoiding-conflicts/" class="md-nav__link">
+        Coding together avoiding conflicts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Handling-Exceptional-Events/" class="md-nav__link">
+        Handling Exceptional Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/IElement-required-extension-methods/" class="md-nav__link">
+        IElement required extension methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Null-Handling/" class="md-nav__link">
+        Null Handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Templates/" class="md-nav__link">
+        BHoM coding templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/The-IImmutable-interface/" class="md-nav__link">
+        The IImmutable interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/The-%60External%60-class/" class="md-nav__link">
+        The `External` class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Toolkits-targeting-multiple-versions-of-the-same-software/" class="md-nav__link">
+        Toolkits targeting multiple versions of the same software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/Using-Visual-Studio/" class="md-nav__link">
+        Using Visual Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/Development%20FAQ/namespaces/" class="md-nav__link">
+        Namespaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Conventions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Conventions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Conventions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conventions/BHoM-Structural-Conventions/" class="md-nav__link">
+        BHoM Structural Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conventions/BHoM-Units-conventions/" class="md-nav__link">
+        BHoM Units conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conventions/BHoM-View-quality-conventions/" class="md-nav__link">
+        View quality conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conventions/Shear-Area-Derivation/" class="md-nav__link">
+        Shear Area Derivation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Code Compliance and CI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Compliance and CI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Code Compliance and CI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/" class="md-nav__link">
+        Code compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/Continuous-integration/" class="md-nav__link">
+        Continuous Integration (CI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          CI Checks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CI Checks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          CI Checks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-All/" class="md-nav__link">
+        Check All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Branch-Compliance/" class="md-nav__link">
+        Check Branch Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Code-Compliance/" class="md-nav__link">
+        Check Code Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Compliance/" class="md-nav__link">
+        Check Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Copyright-Compliance/" class="md-nav__link">
+        Check Copyright Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Core/" class="md-nav__link">
+        Check Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Dataset-Compliance/" class="md-nav__link">
+        Check Dataset Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Documentation-Compliance/" class="md-nav__link">
+        Check Documentation Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Installer/" class="md-nav__link">
+        Check Installer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Null-Handling/" class="md-nav__link">
+        Check Null Handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-PR-Builds/" class="md-nav__link">
+        Check-PR-Builds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Project-Compliance/" class="md-nav__link">
+        Check Project Compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Ready-To-Merge/" class="md-nav__link">
+        Check Ready To Merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Required/" class="md-nav__link">
+        Check Required
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Serialisation/" class="md-nav__link">
+        Check Serialisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Unit-Tests/" class="md-nav__link">
+        Check Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Checks/Check-Versioning/" class="md-nav__link">
+        Check Versioning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          CI Failures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CI Failures" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          CI Failures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/AssemblyInfo-compliance/" class="md-nav__link">
+        AssemblyInfo compliance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/AttributeHasEndingPunctuation/" class="md-nav__link">
+        AttributeHasEndingPunctuation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/EngineClassMatchesFilePath/" class="md-nav__link">
+        EngineClassMatchesFilePath
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasConstructor/" class="md-nav__link">
+        HasConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasDescriptionAttribute/" class="md-nav__link">
+        HasDescriptionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasOneConstructor/" class="md-nav__link">
+        HasOneConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasOutputAttribute/" class="md-nav__link">
+        HasOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasPublicGet/" class="md-nav__link">
+        HasPublicGet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasSingleClass/" class="md-nav__link">
+        HasSingleClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasSingleNamespace/" class="md-nav__link">
+        HasSingleNamespace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasUniqueMultiOutputAttributes/" class="md-nav__link">
+        HasUniqueMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasUniqueOutputAttribute/" class="md-nav__link">
+        HasUniqueOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasValidConstructor/" class="md-nav__link">
+        HasValidConstructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasValidCopyright/" class="md-nav__link">
+        HasValidCopyright
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasValidMultiOutputAttributes/" class="md-nav__link">
+        HasValidMultiOutputAttributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasValidOutputAttribute/" class="md-nav__link">
+        HasValidOutputAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/HasValidPreviousVersionAttribute/" class="md-nav__link">
+        HasValidPreviousVersionAttribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/InputAttributeHasMatchingParameter/" class="md-nav__link">
+        InputAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/InputAttributeIsUnique/" class="md-nav__link">
+        InputAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/InputParameterStartsLower/" class="md-nav__link">
+        InputParameterStartsLower
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsExtensionMethod/" class="md-nav__link">
+        IsExtensionMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsInputAttributePresent/" class="md-nav__link">
+        IsInputAttributePresent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsPublicClass/" class="md-nav__link">
+        IsPublicClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsPublicProperty/" class="md-nav__link">
+        IsPublicProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsStaticClass/" class="md-nav__link">
+        IsStaticClass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsUsingCustomData/" class="md-nav__link">
+        IsUsingCustomData
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidConvertMethodName/" class="md-nav__link">
+        IsValidConvertMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidCreateMethod/" class="md-nav__link">
+        IsValidCreateMethod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidCreateMethodName/" class="md-nav__link">
+        IsValidCreateMethodName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidDataset/" class="md-nav__link">
+        IsValidDataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidEngineClassName/" class="md-nav__link">
+        IsValidEngineClassName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsValidIImmutableObject/" class="md-nav__link">
+        IsValidIImmutableObject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/IsVirtualProperty/" class="md-nav__link">
+        IsVirtualProperty
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/MethodNameContainsFileName/" class="md-nav__link">
+        MethodNameContainsFileName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/MethodNameStartsUpper/" class="md-nav__link">
+        MethodNameStartsUpper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/ModifyReturnsDifferentType/" class="md-nav__link">
+        ModifyReturnsDifferentType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/ModifyReturnsSameType/" class="md-nav__link">
+        ModifyReturnsSameType
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/ObjectNameMatchesFileName/" class="md-nav__link">
+        ObjectNameMatchesFileName
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/PreviousInputNamesAttributeHasMatchingParameter/" class="md-nav__link">
+        PreviousInputNamesAttributeHasMatchingParameter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/PreviousInputNamesAttributeIsUnique/" class="md-nav__link">
+        PreviousInputNamesAttributeIsUnique
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/Project-References-and-Build-Paths/" class="md-nav__link">
+        Project References and Build Paths
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Code%20Compliance%20and%20CI/CI%20Failures/PropertyAccessorsHaveNoBody/" class="md-nav__link">
+        PropertyAccessorsHaveNoBody
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Datasets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datasets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Datasets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Datasets/" class="md-nav__link">
+        BHoM Datasets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Diffing and Hashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diffing and Hashing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diffing and Hashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diffing%20and%20Hashing/Configuring-Revit-objects-comparison-%28RevitComparisonConfig%29/" class="md-nav__link">
+        Configuring Revit objects comparison (RevitComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diffing%20and%20Hashing/Configuring-objects-comparison-%28ComparisonConfig%29/" class="md-nav__link">
+        Configuring objects comparison (ComparisonConfig)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diffing%20and%20Hashing/Diffing-and-Hashing-%E2%80%93-guide-for-developers/" class="md-nav__link">
+        Diffing and Hashing – guide for developers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diffing%20and%20Hashing/Diffing-%E2%80%93-tracking-changes-in-your-BHoM-objects/" class="md-nav__link">
+        Diffing – tracking changes in your BHoM objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diffing%20and%20Hashing/Hash-%E2%80%93-an-object%27s-identity/" class="md-nav__link">
+        Hash – an object's identity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Releases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Releases/Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Releases/Releases-and-Versioning/" class="md-nav__link">
+        Releases and Versioning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Versioning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versioning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Versioning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/" class="md-nav__link">
+        Versioning BHoM objects and methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/2022-Q1---Reflection-oM-Engine-migration-to-Base-oM-Engine/" class="md-nav__link">
+        2022 Q1   Reflection oM Engine migration to Base oM Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/Backwards-compatibility/" class="md-nav__link">
+        Backwards compatibility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/Change-to-a-property-name/" class="md-nav__link">
+        Change to a property name.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/How-to-check-your-versioned-changes-are-working/" class="md-nav__link">
+        How to check your versioned changes are working ?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Versioning/Object-name-change-and-associated-custom-create-method/" class="md-nav__link">
+        Object name change and associated custom create method
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    ⚠️ Note ⚠️
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-adapter-actions-work" class="md-nav__link">
+    How the Adapter Actions work
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Adapter Actions work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-crud-paradigm" class="md-nav__link">
+    The CRUD paradigm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-the-push-action" class="md-nav__link">
+    An example: the Push Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-detail-why-the-actions-crud-paradigm" class="md-nav__link">
+    In detail: Why the "Actions-CRUD" paradigm?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-note-why-using-five-different-actions-push-pull-move-remove-execute" class="md-nav__link">
+    Side note: Why using five different Actions (Push, Pull, Move, Remove, Execute)...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-note-other-advantages-of-the-actions-crud-paradigm" class="md-nav__link">
+    Side note: Other advantages of the "Actions-CRUD" paradigm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crud-methods-details-and-implementation" class="md-nav__link">
+    CRUD methods: details and implementation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="adapter-actions">Adapter actions</h1>
+<p>After covering the basics in <a href="/BHoM_Adapter/Introduction-to-the-BHoM_Adapter">Introduction to BHoM_Adapter</a>, this page explains the Adapter Actions more in detail, including their underlying mechanism.</p>
+<p>After reading this you should be all set to develop your own <a href="/Basics/The-BHoM-Toolkit">BHoM Toolkit</a> 🚀 </p>
+<hr />
+<p><br/></p>
+<blockquote>
+<h3 id="note">⚠️ Note ⚠️</h3>
+<p>Before reading this page, make sure you have read the <a href="/BHoM_Adapter/Introduction-to-the-BHoM_Adapter">Introduction to BHoM_Adapter</a>.
+<br/></p>
+</blockquote>
+<p>◀️ Previous read: <em><a href="/BHoM_Adapter/Introduction-to-the-BHoM_Adapter">introduction to BHoM_Adapter</a></em></p>
+<p>▶️ Next read: <em><a href="/Basics/The-BHoM-Toolkit">The BHoM Toolkit</a></em> and, optionally, <em><a href="/BHoM_Adapter/The-CRUD-methods">The CRUD methods</a>.</em></p>
+<p><br/></p>
+<hr />
+<h2 id="how-the-adapter-actions-work">How the Adapter Actions work</h2>
+<p><a href="/BHoM_Adapter/Introduction-to-the-BHoM_Adapter">As we saw before</a>, the Adapter Actions are backed by what we call <em>CRUD</em> methods. Let's see what that means.</p>
+<h3 id="the-crud-paradigm">The CRUD paradigm</h3>
+<p>A very common <strong>paradigm</strong> that describes <strong>all the possible action types</strong> is <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>. This paradigm says that, regardless of the connection being made, the connector actions can be always categorised as:
+* <strong>C</strong>reate = add new entries
+* <strong>R</strong>ead = retrieve, search, or view existing entries
+* <strong>U</strong>pdate = edit existing entries
+* <strong>D</strong>elete = deactivate, or remove existing entries</p>
+<p>Some initial considerations:</p>
+<ul>
+<li>
+<p>Read and Delete are quite self-explanatory; regardless of the context, they are usually quite straightforward to implement.  </p>
+</li>
+<li>
+<p>Create and Update, on the other hand, can sometimes overlap, depending on the interface we have at our disposal (generally, the external software API can be limiting in that regard).</p>
+</li>
+<li>
+<p>Exposing directly these methods would make the User Experience quite complicated. Imagine having to split the various objects composing your model into the objects that need to be <code>Create</code>d, the ones that needs to be <code>Update</code>d, and so on. Not nice. </p>
+</li>
+</ul>
+<p>We need something simpler from an UI perspective, while retaining the advantages of CRUD - namely, their limited scope makes them simple to implement.</p>
+<p>The answer is <strong>the Adapter Actions: they take care of calling the <code>CRUD</code> methods in the most appropriate way</strong> for both the user and the developer.</p>
+<h3 id="an-example-the-push-action">An example: the Push Action</h3>
+<p>Let's consider for example the case where we are <em>pushing</em> BHoM objects from Grasshopper to an external software.<br />
+The first time those objects are <code>Push</code>ed, we expect them to be <code>Create</code>d in the external software.<br />
+The following times, we expect the existing objects to be <code>Update</code>d with the parameters specified in the new ones. </p>
+<blockquote>
+<h3 id="in-detail-why-the-actions-crud-paradigm">In detail: Why the "Actions-CRUD" paradigm?</h3>
+<p>This paradigm allows us to <em>extend</em> the capabilities of the CRUD methods alone, while keeping the User Experience as simple as possible; it does so mainly through the <strong>Push</strong>. The Push, in fact, can take care for the user of doing <code>Create</code> or <code>Update</code> or <code>Delete</code> when most appropriate – based on the objects that have been <code>Read</code> from the external model.</p>
+<p>The rest of the Adapter Actions mostly have a 1:1 correspondence with the backing CRUD methods; for example, Pull calls <code>Read</code>, but its scope can be expanded to do something in addition to only Reading. This way, <code>Read</code> is "action-agnostic", and can be used from other Adapter Actions (most notably, the Push). You write <code>Read</code> once, and you can use it in two different actions!</p>
+<h3 id="side-note-why-using-five-different-actions-push-pull-move-remove-execute">Side note: Why using five different Actions (Push, Pull, Move, Remove, Execute)...</h3>
+<p><strong>... and not something simpler, like "Export" and "Import"?</strong><br />
+<strong>... or just exposing the CRUD methods?</strong><br />
+The reason is that the methods available to the user need to cover all possible use cases, while being simple to use.
+We could have limited the Adapter Actions to only Push and Pull – that does in fact correspond to Export and Import, and are the most commonly used – but that would have left out some of the functionality that you can obtain with the CRUD methods (for example, the Deletion).</p>
+<p>On the other hand, exposing directly the CRUD methods would not satisfy the criteria of simplicity of use for the User.
+Imagine having to Read an external model, then having manually to divide the objects in the ones to be <code>Update</code>d, the ones to be <code>Delete</code>d, then separately calling <code>Create</code> for the new ones you just added... Not really simple! The Push takes care of that instead.</p>
+<h3 id="side-note-other-advantages-of-the-actions-crud-paradigm">Side note: Other advantages of the "Actions-CRUD" paradigm</h3>
+<p>We've explained how this paradigm allows us to cover all possible use cases while being simple from an User perspective. In addition, it allows us to:
+1) ensure consistency across the many, different implementations of the BHoM_Adapter in different Toolkits and contexts, therefore:
+2) ensuring consistency from the User perspective (all UIs have the same Adapter Actions, backed by different CRUD methods)
+3) maximise <a href="https://stackoverflow.com/a/9420039/3873799">code scalability</a>
+4) Ease of development – learn once, implement everywhere</p>
+</blockquote>
+<h2 id="crud-methods-details-and-implementation">CRUD methods: details and implementation</h2>
+<p>The paragraphs that follow down below are dedicated to explaining <em>the relationship between the CRUD methods and the Adapter Actions</em>. </p>
+<p>For first time developers, this is not essential – <strong>you just need to assume that <em>the CRUD methods are called by the Adapter Actions when appropriate</em></strong>.<br />
+You may now want to jump to <a href="/BHoM_Adapter/The-BHoM-Toolkit">our guide to build a <strong>BHoM Toolkit</strong></a>.</p>
+<blockquote>
+<p>You will read more about the CRUD methods and how you should implement them in <a href="/BHoM_Adapter/The-CRUD-methods">their dedicated page</a> that you should read after the BHoM_Toolkit page.</p>
+</blockquote>
+<p>Otherwise, keep reading.</p>
+<h1 id="advanced-topic-optional-adapter-actions-complete-description">Advanced topic (optional) - Adapter actions: complete description</h1>
+<p>We can now fully understand the Adapter Actions, complete of their relationships with their backing CRUD methods.</p>
+<h2 id="push">Push</h2>
+<p>The Push action is defined as follows:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Push</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span><span class="w"> </span><span class="n">objects</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PushType</span><span class="w"> </span><span class="n">pushType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PushType</span><span class="p">.</span><span class="n">AdapterDefault</span><span class="p">,</span><span class="w"> </span><span class="n">ActionConfig</span><span class="w"> </span><span class="n">actionConfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<p>This method exports the objects using different combinations of the CRUD methods as appropriate, depending on the <code>PushType</code> input. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/74738489-ec15cd80-524e-11ea-86a7-a3f68f35ec68.png" /></p>
+<p>Let's see again how we described the Push mechanism in the previous page:</p>
+<blockquote>
+<p>The Push takes the input <code>objects</code> and: 
+  - if they don't exist in the external model yet, they are created brand new;
+  - if they exist in the external model, they will be updated (edited);
+  - under some particular circumstances and for specific software, if some objects in the external software are deemed to be "old", the Push will delete those. </p>
+</blockquote>
+<p>The determination of the object status (<em>new, old</em> or <em>edited</em>) is done through a "Venn Diagram" mechanism:
+<img alt="img" src="https://raw.githubusercontent.com/BuroHappoldEngineering/documentation-page/main/docs/_images/VennDiagram.png" /></p>
+<p>The <a href="https://github.com/BHoM/BHoM_Engine/blob/master/Data_Engine/Create/VennDiagram.cs">Venn Diagram</a> is a BHoM object class that can be created with any <code>Comparer</code> that you might have for the objects. It compares the objects with the given rule (the <code>Comparer</code>) and returns the objects belonging to one of two groups, and the intersection (objects belonging to both groups).</p>
+<p>During the Push, the two sets of objects being compared are the objects <em>currently being pushed</em>, or <strong><code>objectsToPush</code></strong>, and the ones that have been <em>read from the external model</em>, or <strong><code>existingObjects</code></strong>.</p>
+<p>This is the reason why <strong>the first <code>CRUD</code> method that the Push will attempt to invoke is <code>Read</code></strong>. The Push is an <em>export</em>, but you need to check what objects <em>exist</em> in the external model first if you want do decide <em>what</em> and <em>how</em> to export.</p>
+<blockquote>
+<h3 id="additional-note-custom-comparers">Additional note: custom Comparers</h3>
+<p>Once the <code>existingObjects</code> are at hand, it's easy to compare them with the <code>objectsToPush</code> through the Venn Diagram. Even if no specific comparer for the object has been written, the base C# IEqualityComparer will suffice to tell the two apart. If you want to have some specific way of comparing two objects (for example, if you think that two overlapping columns should be deemed the same no matter what their <code>Name</code> property is), then you should define specific comparer for that type. You can see how to do that in the next page dedicated to the BHoM_Toolkit.</p>
+</blockquote>
+<h3 id="a-practical-example">A practical example</h3>
+<p>Now, let's think that we are pushing two columns: column <code>A_new</code> and column <code>B_new</code>; <strong>and</strong> that the external model has already two columns somewhere, column <code>B_old</code> and column <code>C_old</code>. <code>B_new</code> and <code>B_old</code> are located in the same position in the model space, they have all the same properties except the Name property.</p>
+<p>We activate the Push.</p>
+<p>First, the external model is read. The existingObjects list now includes the two existing columns <code>B_old</code> and <code>C_old</code>.</p>
+<p>Then a VennDiagram is invoked to compare the existingObjects with the objectsToPush (which are the two pushed columns <code>A_new</code> and <code>B_new</code>).</p>
+<h4 id="1-the-object-being-pushed-is-new">1) The object being pushed is new.</h4>
+<p>There is no existing object in the external model that corresponds to one of the columns being pushed. Easy peasy: Push will call <code>Create</code> this column for this category of objects. <code>A_new</code> is <code>Create</code>d.</p>
+<h4 id="2-the-object-being-pushed-is-deemed-the-same-of-one-in-the-external-model">2) The object being pushed is deemed the same of one in the external model.</h4>
+<p>What does "deemed the same" means?</p>
+<p>It means that the <code>Comparer</code> has evaluated them to be the same. This does not exclude that there might be some property of the objects that the Comparer is deliberately skipping to compare. </p>
+<p>For example, we might have a Comparer that says:</p>
+<blockquote>
+<p><em>two overlapping columns should be deemed the same no matter what their <code>Name</code> property is.</em></p>
+</blockquote>
+<p>If so, columns <code>B_new</code> and <code>B_old</code> are deemed the same.</p>
+<p>But then, we need to update the Name property of the column in the external model, with the most up-to-date Name from the object being pushed.</p>
+<p>Hence, we call <code>Update</code> for this category of objects.<br />
+<code>B_new</code> is passed to the <code>Update</code> method.</p>
+<h4 id="3-remaining-existing-objects-that-are-not-among-the-objects-being-pushed">3) Remaining existing objects that are not among the objects being pushed.</h4>
+<p>What to do with this category of objects? What to do with <code>C_old</code>? </p>
+<p>An easy answer would be "let's <code>Delete</code> 'em!", probably. However, if we simply did that, then we would force the user to always input, in the objectsToPush, also all the objects that <em>do not need to be Deleted</em>. </p>
+<p>Which is what we ask the user to do anyway, but to a lesser scale. 
+Our approach is <strong>not to do anything</strong> to these objects, <strong>unless tags have been used</strong>.</p>
+<p>We assume that if the User wants the <code>Delete</code> method to be called for this category of objects, then the existing objects must have been pushed with a tag attached. If the tag of the objects being Pushed is the same of the existing objects, we deem those objects to be effectively old, calling <code>Delete</code> for them.</p>
+<p>Let's imagine that our column <code>C_old</code> was originally pushed with the attached tag "basementColumns".
+If I'm currently pushing columns with the same tag "basementColumns", it means that I'm pushing the whole set of columns that should exist in the basement. Therefore, <code>C_old</code> is <code>Delete</code>d.</p>
+<h4 id="overlapping-objects-with-multiple-tags"><em>Overlapping</em> objects with multiple tags</h4>
+<p>Let's say that I push a set of columns with the tag "basementColumns". Everything that those bars need to be fully defined – what we call the Dependant Objects, e.g. the bar end nodes (points), the bar section property, the bar material, etc. – will be pushed together with it, and <strong>with the same tag attached</strong>. </p>
+<p>Let's then say I then push another set of bars corresponding to an adjacent part of the building with the tag "groundFloorColumns". </p>
+<p>It could be that a column with the tag "basementColumns" has an endpoint that <em>overlaps</em> with the endpoint of another column tagged "groundFloorColumns". That endpoint is going to have two tags: <code>basementColumns groundFloorColumns</code>.</p>
+<p>The overlapping elements will end up with two tags on them: "basementColumns" and "groundFloorColumns". </p>
+<p>Later, I do another push of columns tagged with the tag <code>groundFloorColumns</code>.
+Some objects come up as existing only in the external model and not among those being pushed.<br />
+Since a tag is being used and checks out, I should be deleting all these objects.<br />
+However, the overlapping endpoint should not be deleted; simply, <code>groundFloorColumns</code> should be removed from its tags.</p>
+<p>We then call the <code>IUpdateTags</code> method for these objects (no call to <code>Delete</code>). 
+That is a method that should be implemented in the Toolkit and whose only scope is to update the tags. Its implementation is left to the developer, but some examples can be seen in some of the existing adapters (GSA_Adapter).</p>
+<h4 id="a-full-diagram-for-1-2-and-3">A full diagram for 1), 2) and 3)</h4>
+<p>This diagram summarises what we've been saying so far for the Push.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/75054097-55eddb80-54ca-11ea-8158-56f0fe924991.png" /></p>
+<h4 id="complete-flow-diagram-of-the-push-advanced">Complete flow diagram of the Push (advanced)</h4>
+<p>Since an image is worth a thousand words, we provide a complete flow diagram of the Push below. If you click on the image you can download it.</p>
+<p>This is really an advanced read that you might need only if you want to get into the nitty-gritty of the Push mechanism.</p>
+<p><a href="https://github.com/BHoM/BHoM_Adapter/files/4218880/191003-Adapter.workflows-PROPOSED_mergedALT2andALT1.1.-cleaned.pdf">
+<img src="https://user-images.githubusercontent.com/6352844/74760173-ea113600-5271-11ea-90c6-7e4f8302b79e.png">
+</a></p>
+<h2 id="pull">Pull</h2>
+<p>The Pull action is defined as follows:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Pull</span><span class="p">(</span><span class="n">IRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">PullType</span><span class="w"> </span><span class="n">pullType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PullType</span><span class="p">.</span><span class="n">AdapterDefault</span><span class="p">,</span><span class="w"> </span><span class="n">ActionConfig</span><span class="w"> </span><span class="n">actionConfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<p>This Action has a more 1:1 correspondence with the backing CRUD method: it is essentially a simple call to <em>Read</em> that grabs all the objects corresponding to the specified <code>IRequest</code> (which is, essentially, simply a query).<br />
+There is some additional logic related to technicalities, for instance how we deal with different IRequests and different object types (IBHoMObject vs IObjects vs IResults, etc).</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/74739504-def9de00-5250-11ea-807f-d38df3a8e4f1.png" /></p>
+<p>You can find more info on Requests in their related section of the <a href="/BHoM_Adapter/Adapter-Actions---advanced-parameters">Adapter Actions - Advanced parameters</a> wiki page.</p>
+<p>Note that the method returns a list of <code>object</code>, because the pulled objects must not necessarily be limited to BHoM objects (you can import any other class/type, also from different Object Models).</p>
+<h2 id="move">Move</h2>
+<p>Move performs a Pull and then a Push. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/74739349-8de9ea00-5250-11ea-9812-32768f59a10a.png" /></p>
+<p>It's greatly helpful in converting a model from a software to another without having to load all the data in the UI (i.e., doing separately a Pull and then a Push), which would prove too computationally heavy for larger models.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/74739474-cd183b00-5250-11ea-8954-e41200bf300c.png" /></p>
+<h2 id="remove">Remove</h2>
+<p>The Remove action is defined as follows:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Remove</span><span class="p">(</span><span class="n">IRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">ActionConfig</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<p>This method simply calls Delete. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6352844/74739638-2a13f100-5251-11ea-89cb-1e9efd804efb.png" /></p>
+<p>You might find some Toolkits that, prior to calling Delete, add some logic to the Action, for example to deal with a particular input Request. </p>
+<p>The method returns the number of elements that have been removed from the external model.</p>
+<h2 id="execute">Execute</h2>
+<p>The Execute is defined as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">Output</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;,</span><span class="w"> </span><span class="kt">bool</span><span class="p">&gt;</span><span class="w"> </span><span class="n">Execute</span><span class="p">(</span><span class="n">IExecuteCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">ActionConfig</span><span class="w"> </span><span class="n">actionConfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>The <em>Execute</em> method provides a way to ask your software to do things that are not covered by the other methods. A few possible cases are asking the tool to run some calculations, print a report, save,... A dictionary of parameters is also provided if needed. In the case of print for example, it might be the folder where the file needs to be saved and the name given to the file. </p>
+<p>The method returns <em>true</em> if the command was executed successfully.</p>
+<h1 id="next-steps-create-your-own-adapter">Next steps: Create Your Own Adapter</h1>
+<p>Read on our <a href="/BHoM_Adapter/The-BHoM-Toolkit">guide to build a <strong>BHoM Toolkit</strong></a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Adapter-Actions---advanced-parameters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adapter Actions: advanced parameters" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Adapter Actions: advanced parameters
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Implement-an-Adapter/" class="md-footer__link md-footer__link--next" aria-label="Next: Implement an Adapter" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Implement an Adapter
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2022 BHoM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

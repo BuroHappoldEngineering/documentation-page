@@ -10,3 +10,6 @@ theme:
 
   features:
     - navigation.tracking
+
+plugins:
+  - awesome-pages

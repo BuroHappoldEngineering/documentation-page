@@ -11,9 +11,10 @@ It is not an attempt to standardise exact processes – these must be flexible..
 
 It is also not an attempt to standardise the software we use...
 
-But in standardising the _data_ but not the data-_base_, we provide great opportunities for efficiencies, for collaboration and most of all, to change the way we work.
+BHoM is a collection of _schemas_, _functionality_ and _conversions_. BHoM aims to standardise the _data_, not the data-_base_, in the belief that this provides great opportunities for efficiency, for collaboration and most of all, to improve the way we work within any Building Habitat.
 
+### An agnostic framework
+BHoM is crafted as transdisciplinary, software-agnostic and office/region/country-invariant, and therefore would be nothing without our active community and wide range of contributors.
 
-It is crafted as transdisciplinary, software-agnostic and office/region/country-invariant, and therefore would be nothing without our active community and wide range of contributors.
-
+### Embracing open-source
 The whole **BHoM** project uses an open-source model for project architecture, co-creation and planning. So explore, experiment and contribute to both the source code and the wiki. Sharing and building our code together in this open-source type approach means we can feed off and pool our disparate knowledge, experience and expertise towards a common goal – better design.

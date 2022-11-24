@@ -1,7 +1,7 @@
 # Installing BHoM
 We recommend using the BHoM Installer for most situations. 
 
-The latest versions of which can always be grabbed from https://bhom.xyz/.
+The latest installer can always be downloaded from [bhom.xyz](https://bhom.xyz/).
 
 Make sure all instances of Rhino, Excel and Revit are closed when installing BHoM.
 

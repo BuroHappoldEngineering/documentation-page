@@ -18,13 +18,3 @@ The commercial softwares that we are using in our work do not always provide sol
 Through its central object model, the BHoM provides a common platform for everyone to write scripts in a scalable way. A common language means that the output of a script created by one person can easily be used as the input for another script. Thanks to the BHoM being exposed in various UIs such as Grasshopper and Excel, you don't even need to know how to write code in C# to use the functionality created by other people. We call this large collection of "scripts" the **Engine** where we have organised them in a way it is easy to find a specific method or figure out where to create a new one.   
 
 ![](https://user-images.githubusercontent.com/16853390/50327328-8c784100-0529-11e9-85d0-3ea7285eb794.png)
-
-## Further Reading
-
-If you want to know more about the internal structure of the BHoM:
-* [Structure of the BHoM](/Structure-of-the-BHoM)
-
-If you want to start using GitHub and Visual Studio:
-* [Submitting an Issue](/Submitting-an-Issue)
-* [Resolving an Issue](/Resolving-an-Issue) 
-* [Using Visual Studio](/Using-Visual-Studio)

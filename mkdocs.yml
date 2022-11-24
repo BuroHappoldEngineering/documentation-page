@@ -2,3 +2,8 @@ site_name: BHoM wiki
 
 theme:
   name: material
+  logo: img/logos/logo.png
+  favicon: img/logos/logo.png
+  palette:
+    primary: white
+    accent: pink

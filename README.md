@@ -1,12 +1,8 @@
-# documentation
-Repository to host general Wiki, any material required for this and any additional documentation about the Building and Habitats object Model
+# BHoM Documentation
+Repository to host general documentation on BHoM.
 
 
-
-![UntitledDiagram1](https://burohappoldengineering.github.io/documentation-page/UntitledDiagram.drawio.svg)
-
-
-![flowcharttest](https://burohappoldengineering.github.io/documentation-page/flowcharttest.drawio)
+Navigate the documentation by heading to [www.bhom.xyz/documentation](www.bhom.xyz/documentation).
 
 
-<iframe height="300px" width="100% - 200px"  src="https://service.tib.eu/webvowl/" frameborder="0" allowfullscreen></iframe>
+See [editing the documentation](www.bhom.xyz/documentation/Contributing/Editing-the-documentation/) for more information.

@@ -1,8 +1,9 @@
 # Adapter actions 
 
-◀️ Previous read: _[introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter)_
+After covering the basics in [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
 
-▶️ Next read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit.md)_ and _[The BHoM Toolkit](/BHoM_Adapter/The-CRUD-methods.md)._
+After reading this you should be all set to develop your own [BHoM Toolkit](/Basics/The-BHoM-Toolkit) 🚀 
+
 
 ___________________________________________________________________
 
@@ -10,20 +11,18 @@ ___________________________________________________________________
 
 > ### ⚠️ Note ⚠️
 > Before reading this page, make sure you have read the [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter).
-
 <br/>
 
-After covering the basics in [Introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), this page explains the Adapter Actions more in detail, including their underlying mechanism.
+◀️ Previous read: _[introduction to BHoM_Adapter](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter)_
 
-After reading this you should be all set to develop your own [BHoM Toolkit](/Basics/The-BHoM-Toolkit.md) 🚀 
+▶️ Next read: _[The BHoM Toolkit](/Basics/The-BHoM-Toolkit)_ and, optionally, _[The CRUD methods](/BHoM_Adapter/The-CRUD-methods)._
 
 <br/>
-
 ___________________________________________________________________
 
 
 ## How the Adapter Actions work
-As we've said before, the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
+[As we saw before](/BHoM_Adapter/Introduction-to-the-BHoM_Adapter), the Adapter Actions are backed by what we call *CRUD* methods. Let's see what that means.
 
 ### The CRUD paradigm
 A very common **paradigm** that describes **all the possible action types** is [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). This paradigm says that, regardless of the connection being made, the connector actions can be always categorised as:
